@@ -61,12 +61,13 @@
                     <img src="LOGO.png" alt="" class="LOGO">
                     <!-- Navigation desktop -->
                     <nav id="menu" class="hidden md:flex space-x-8">
-                       <a href="./index.html" class="text-gray-700 hover:text-primary transition-colors" >Accueil</a>
-                        <a href="./services.html" class="text-gray-700 hover:text-primary transition-colors">Services</a>
+                        <a href="./index.html" class="text-gray-700 hover:text-primary transition-colors">Accueil</a>
+                        <a href="./services.html"
+                            class="text-gray-700 hover:text-primary transition-colors">Services</a>
                         <a href="./rendez-vous.html"
                             class="text-gray-700 hover:text-primary transition-colors">Rendez-vous</a>
                         <a href="#" class="text-gray-700 hover:text-primary transition-colors text-primary">Urgences</a>
-                        <a href="./contact.html" class="text-gray-700 hover:text-primary transition-colors">Contact</a> 
+                        <a href="./contact.html" class="text-gray-700 hover:text-primary transition-colors">Contact</a>
 
                     </nav>
                 </div>
@@ -356,7 +357,7 @@
 
                         <div class="bg-gray-100 rounded-xl overflow-hidden mb-6">
                             <div class="h-80 bg-center bg-cover"
-                                style="background-image: url('https://public.readdy.ai/gen_page/map_placeholder_1280x720.png')">
+                                style="background-image: url('map.png')">
                             </div>
                         </div>
 
@@ -369,7 +370,7 @@
                                     </div>
                                     <div>
                                         <p class="font-medium">Adresse</p>
-                                        <p>184 Rue du Faubourg Saint-Antoine, 75012 Paris</p>
+                                        <p>keur massar, cité apix</p>
                                     </div>
                                 </div>
                                 <div class="flex items-start space-x-3">
@@ -387,7 +388,7 @@
                                     </div>
                                     <div>
                                         <p class="font-medium">Transport en commun</p>
-                                        <p>Métro Faidherbe-Chaligny (ligne 8)</p>
+                                        <p>keur massar, cité apix (ligne 220, 227, 91, 50)</p>
                                     </div>
                                 </div>
                             </div>
@@ -428,11 +429,10 @@
         <div class="max-w-7xl mx-auto">
             <div class="grid md:grid-cols-4 gap-8">
                 <div>
-                    <div class="font-['Pacifico'] text-xl mb-4">logo</div>
-                    <p class="text-gray-400 text-sm">Hôpital Saint-Antoine - Excellence médicale et soins de qualité
-                        depuis 1795.</p>
+                    <div class="font-['Pacifico'] text-xl mb-4"><img width="150px" src="LOGO.png" alt=""></div>
+                    <p class="text-gray-400 text-sm">Clinic Sama Santé - Excellence médicale et soins de qualité
+                        depuis 2008.</p>
                 </div>
-
                 <div>
                     <h3 class="font-semibold mb-4">Services</h3>
                     <ul class="space-y-2 text-sm text-gray-400">
@@ -442,38 +442,29 @@
                         <li><a href="#" class="hover:text-white">Imagerie médicale</a></li>
                     </ul>
                 </div>
-
                 <div>
                     <h3 class="font-semibold mb-4">Urgences</h3>
                     <ul class="space-y-2 text-sm text-gray-400">
-                        <li>SAMU : 15</li>
+                        <li>SAMU : 1515</li>
                         <li>Pompiers : 18</li>
                         <li>Urgences : 112</li>
-                        <li>Centre antipoison : 01 40 05 48 48</li>
+                        <li>Centre antipoison : 77 212 12 12</li>
                     </ul>
                 </div>
-
                 <div>
                     <h3 class="font-semibold mb-4">Contact</h3>
                     <ul class="space-y-2 text-sm text-gray-400">
-                        <li>01 49 28 20 00</li>
-                        <li>contact@hopital-saint-antoine.fr</li>
-                        <li>184 Rue du Faubourg Saint-Antoine</li>
-                        <li>75012 Paris</li>
+                        <li>33 878 78 78</li>
+                        <li>sama-santé@gmail.com</li>
+                        <li>keur massar, cité apix</li>
+                        <li>632 Apix,sangalkam</li>
                     </ul>
                 </div>
             </div>
-
             <div class="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
                 <div class="text-sm text-gray-400">
-                    © 2025 Hôpital Saint-Antoine. Tous droits réservés.
-                </div>
-                <div class="flex space-x-6 mt-4 md:mt-0">
-                    <button
-                        class="bg-primary text-white px-6 py-2 !rounded-button text-sm font-medium whitespace-nowrap">
-                        Retour à l'accueil
-                    </button>
-                </div>
+                    © 2025 Clinic Sama Santé. Tous droits réservés. </div>
+               
             </div>
         </div>
     </footer>
@@ -589,81 +580,81 @@
     </script>
 
     <!-- Bouton flottant du chatbot -->
-<div id="chatbot-button"
-    class="fixed bottom-6 right-6 bg-primary text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg cursor-pointer hover:scale-110 transition-transform z-50">
-    <i class="ri-message-3-line text-2xl"></i>
-</div>
-
-<!-- Popup chatbot -->
-<div id="chatbot-popup"
-    class="hidden fixed bottom-20 right-6 w-80 bg-white rounded-lg shadow-lg border border-gray-200 z-50 flex flex-col">
-    <!-- Header -->
-    <div class="bg-primary text-white p-3 rounded-t-lg flex justify-between items-center">
-        <span class="font-semibold">Assistant Sama Santé</span>
-        <button id="chatbot-close" class="text-white hover:text-gray-200">
-            <i class="ri-close-line text-xl"></i>
-        </button>
+    <div id="chatbot-button"
+        class="fixed bottom-6 right-6 bg-primary text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg cursor-pointer hover:scale-110 transition-transform z-50">
+        <i class="ri-message-3-line text-2xl"></i>
     </div>
 
-    <!-- Messages -->
-    <div id="chatbot-messages" class="p-4 space-y-3 h-64 overflow-y-auto text-sm text-gray-700">
-        <div class="bg-gray-100 p-2 rounded-lg w-max max-w-[75%]">👋 Bonjour ! Comment puis-je vous aider ?</div>
+    <!-- Popup chatbot -->
+    <div id="chatbot-popup"
+        class="hidden fixed bottom-20 right-6 w-80 bg-white rounded-lg shadow-lg border border-gray-200 z-50 flex flex-col">
+        <!-- Header -->
+        <div class="bg-primary text-white p-3 rounded-t-lg flex justify-between items-center">
+            <span class="font-semibold">Assistant Sama Santé</span>
+            <button id="chatbot-close" class="text-white hover:text-gray-200">
+                <i class="ri-close-line text-xl"></i>
+            </button>
+        </div>
+
+        <!-- Messages -->
+        <div id="chatbot-messages" class="p-4 space-y-3 h-64 overflow-y-auto text-sm text-gray-700">
+            <div class="bg-gray-100 p-2 rounded-lg w-max max-w-[75%]">👋 Bonjour ! Comment puis-je vous aider ?</div>
+        </div>
+
+        <!-- Zone de saisie -->
+        <form id="chatbot-form" class="p-3 border-t flex items-center space-x-2">
+            <input type="text" id="chatbot-input" placeholder="Écrivez votre message..."
+                class="flex-1 border rounded-lg px-3 py-2 focus:ring-2 focus:ring-primary outline-none text-sm">
+            <button type="submit" class="bg-primary text-white px-3 py-2 rounded-lg hover:bg-primary/90">
+                <i class="ri-send-plane-2-line"></i>
+            </button>
+        </form>
     </div>
 
-    <!-- Zone de saisie -->
-    <form id="chatbot-form" class="p-3 border-t flex items-center space-x-2">
-        <input type="text" id="chatbot-input" placeholder="Écrivez votre message..."
-            class="flex-1 border rounded-lg px-3 py-2 focus:ring-2 focus:ring-primary outline-none text-sm">
-        <button type="submit" class="bg-primary text-white px-3 py-2 rounded-lg hover:bg-primary/90">
-            <i class="ri-send-plane-2-line"></i>
-        </button>
-    </form>
-</div>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const chatBtn = document.getElementById("chatbot-button");
+            const chatPopup = document.getElementById("chatbot-popup");
+            const chatClose = document.getElementById("chatbot-close");
+            const chatForm = document.getElementById("chatbot-form");
+            const chatInput = document.getElementById("chatbot-input");
+            const chatMessages = document.getElementById("chatbot-messages");
 
-<script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const chatBtn = document.getElementById("chatbot-button");
-        const chatPopup = document.getElementById("chatbot-popup");
-        const chatClose = document.getElementById("chatbot-close");
-        const chatForm = document.getElementById("chatbot-form");
-        const chatInput = document.getElementById("chatbot-input");
-        const chatMessages = document.getElementById("chatbot-messages");
+            // Ouvrir / fermer le chatbot
+            chatBtn.addEventListener("click", () => {
+                chatPopup.classList.toggle("hidden");
+            });
+            chatClose.addEventListener("click", () => {
+                chatPopup.classList.add("hidden");
+            });
 
-        // Ouvrir / fermer le chatbot
-        chatBtn.addEventListener("click", () => {
-            chatPopup.classList.toggle("hidden");
-        });
-        chatClose.addEventListener("click", () => {
-            chatPopup.classList.add("hidden");
-        });
+            // Gestion des messages
+            chatForm.addEventListener("submit", (e) => {
+                e.preventDefault();
+                const userMsg = chatInput.value.trim();
+                if (userMsg === "") return;
 
-        // Gestion des messages
-        chatForm.addEventListener("submit", (e) => {
-            e.preventDefault();
-            const userMsg = chatInput.value.trim();
-            if (userMsg === "") return;
+                // Afficher message utilisateur
+                const userDiv = document.createElement("div");
+                userDiv.className = "bg-primary text-white p-2 rounded-lg w-max max-w-[75%] ml-auto";
+                userDiv.textContent = userMsg;
+                chatMessages.appendChild(userDiv);
 
-            // Afficher message utilisateur
-            const userDiv = document.createElement("div");
-            userDiv.className = "bg-primary text-white p-2 rounded-lg w-max max-w-[75%] ml-auto";
-            userDiv.textContent = userMsg;
-            chatMessages.appendChild(userDiv);
+                chatInput.value = "";
 
-            chatInput.value = "";
+                // Réponse simple du bot (exemple)
+                setTimeout(() => {
+                    const botDiv = document.createElement("div");
+                    botDiv.className = "bg-gray-100 p-2 rounded-lg w-max max-w-[75%]";
+                    botDiv.textContent = "Merci pour votre message. Un agent vous répondra bientôt.";
+                    chatMessages.appendChild(botDiv);
+                    chatMessages.scrollTop = chatMessages.scrollHeight;
+                }, 800);
 
-            // Réponse simple du bot (exemple)
-            setTimeout(() => {
-                const botDiv = document.createElement("div");
-                botDiv.className = "bg-gray-100 p-2 rounded-lg w-max max-w-[75%]";
-                botDiv.textContent = "Merci pour votre message. Un agent vous répondra bientôt.";
-                chatMessages.appendChild(botDiv);
                 chatMessages.scrollTop = chatMessages.scrollHeight;
-            }, 800);
-
-            chatMessages.scrollTop = chatMessages.scrollHeight;
+            });
         });
-    });
-</script>
+    </script>
 
 
     <script src="https://static.readdy.ai/static/share.js"></script>

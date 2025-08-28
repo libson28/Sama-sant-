@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,46 +12,26 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
     <link rel="icon" href="LOGO.png">
     <style>
-        :where([class^="ri-"])::before {
-            content: "\f3c2";
-        }
-
-        .notif {
-            z-index: 1000;
-        }
-
+        :where([class^="ri-"])::before { content: "\f3c2"; }
+        .notif { z-index: 1000; }
         @media screen and (max-width: 500px) {
-            #notif-popup {
-                right: -2rem !important;
-                width: 250px;
-            }
-
-            .items-center i {
-                font-size: 22px;
-            }
+            #notif-popup { right: -2rem !important; width: 250px; }
+            .items-center i { font-size: 22px; }
         }
-
         @media screen and (max-width: 500px) {
-            #notif-popup {
-                right: -3.5rem !important;
-                width: 250px;
-            }
+            #notif-popup { right: -3.5rem !important; width: 250px; }
         }
-
         @media screen and (max-width: 767px) {
-            .sociaux {
-                display: none !important;
-            }
+            .sociaux { display: none !important; }
         }
+        .LOGO { width: 170px; }
 
-        .LOGO {
-            width: 170px;
+         header {
+            z-index: 999;
         }
     </style>
 </head>
-
 <body class="bg-gray-50">
-
     <header class="sticky top-0 bg-white shadow-sm border-b border-gray-100">
         <div class="w-full px-6 py-2">
             <div class="flex items-center justify-between">
@@ -61,65 +40,48 @@
                     <img src="LOGO.png" alt="" class="LOGO">
                     <!-- Navigation desktop -->
                     <nav id="menu" class="hidden md:flex space-x-8">
-                       <a href="./index.html"  class="text-gray-700 hover:text-primary transition-colors " >Accueil</a>
+                        <a href="./index.html" class="text-gray-700 hover:text-primary transition-colors">Accueil</a>
                         <a href="./services.html" class="text-gray-700 hover:text-primary transition-colors">Services</a>
-                        <a href="#"
-                            class="text-gray-700 hover:text-primary transition-colors text-primary">Rendez-vous</a>
+                        <a href="#" class="text-gray-700 hover:text-primary transition-colors text-primary">Rendez-vous</a>
                         <a href="./urgence.html" class="text-gray-700 hover:text-primary transition-colors">Urgences</a>
-                        <a href="./contact.html" class="text-gray-700 hover:text-primary transition-colors">Contact</a> 
-
+                        <a href="./contact.html" class="text-gray-700 hover:text-primary transition-colors">Contact</a>
                     </nav>
                 </div>
-
                 <!-- Actions -->
                 <div class="flex items-center space-x-4">
                     <!-- Réseaux sociaux -->
                     <div class="flex items-center space-x-3 sociaux">
-                        <a href="https://wa.me/1234567890" target="_blank"
-                            class="w-8 h-8 flex items-center justify-center rounded-full bg-green-100 text-green-500 hover:bg-green-500 hover:text-white shadow-sm hover:shadow-lg transform hover:-translate-y-1 transition-all duration-200 text-2xl">
+                        <a href="https://wa.me/1234567890" target="_blank" class="w-8 h-8 flex items-center justify-center rounded-full bg-green-100 text-green-500 hover:bg-green-500 hover:text-white shadow-sm hover:shadow-lg transform hover:-translate-y-1 transition-all duration-200 text-2xl">
                             <i class="ri-whatsapp-line"></i>
                         </a>
-                        <a href="https://www.linkedin.com/in/tonprofil" target="_blank"
-                            class="w-8 h-8 flex items-center justify-center rounded-full bg-blue-100 text-blue-600 hover:bg-blue-600 hover:text-white shadow-sm hover:shadow-lg transform hover:-translate-y-1 transition-all duration-200 text-2xl">
+                        <a href="https://www.linkedin.com/in/tonprofil" target="_blank" class="w-8 h-8 flex items-center justify-center rounded-full bg-blue-100 text-blue-600 hover:bg-blue-600 hover:text-white shadow-sm hover:shadow-lg transform hover:-translate-y-1 transition-all duration-200 text-2xl">
                             <i class="ri-linkedin-line"></i>
                         </a>
-                        <a href="https://www.instagram.com/tonprofil" target="_blank"
-                            class="w-8 h-8 flex items-center justify-center rounded-full bg-pink-100 text-pink-500 hover:bg-pink-500 hover:text-white shadow-sm hover:shadow-lg transform hover:-translate-y-1 transition-all duration-200 text-2xl">
+                        <a href="https://www.instagram.com/tonprofil" target="_blank" class="w-8 h-8 flex items-center justify-center rounded-full bg-pink-100 text-pink-500 hover:bg-pink-500 hover:text-white shadow-sm hover:shadow-lg transform hover:-translate-y-1 transition-all duration-200 text-2xl">
                             <i class="ri-instagram-line"></i>
                         </a>
                     </div>
-
                     <!-- Notifications -->
                     <div class="relative">
-                        <button id="notif-btn"
-                            class="text-gray-700 hover:text-primary text-2xl focus:outline-none relative">
+                        <button id="notif-btn" class="text-gray-700 hover:text-primary text-2xl focus:outline-none relative">
                             <i class="ri-notification-3-line"></i>
                             <!-- Badge rouge -->
-                            <span id="notif-badge"
-                                class="absolute top-0 right-0 inline-block w-3 h-3 bg-red-500 rounded-full ring-2 ring-white"></span>
+                            <span id="notif-badge" class="absolute top-0 right-0 inline-block w-3 h-3 bg-red-500 rounded-full ring-2 ring-white"></span>
                         </button>
-
                         <!-- Popup notifications -->
-                        <div id="notif-popup"
-                            class="hidden absolute right-0 mt-2 w-80 bg-white shadow-lg rounded-lg p-4 border border-gray-200 z-50">
+                        <div id="notif-popup" class="hidden absolute right-0 mt-2 w-80 bg-white shadow-lg rounded-lg p-4 border border-gray-200 z-50">
                             <h3 class="font-semibold text-gray-800 mb-2">Notifications récentes</h3>
                             <ul class="space-y-2 text-sm text-gray-600">
                                 <li class="p-2 rounded hover:bg-gray-50">⚠️ Dr. Michel Bernard sera absent demain.</li>
-                                <li class="p-2 rounded hover:bg-gray-50">ℹ️ Nouveau service de téléconsultation
-                                    disponible.</li>
-                                <li class="p-2 rounded hover:bg-gray-50">✅ Paiement par carte bancaire désormais
-                                    accepté.</li>
+                                <li class="p-2 rounded hover:bg-gray-50">ℹ️ Nouveau service de téléconsultation disponible.</li>
+                                <li class="p-2 rounded hover:bg-gray-50">✅ Paiement par carte bancaire désormais accepté.</li>
                             </ul>
                         </div>
                     </div>
-
                     <!-- Bouton menu hamburger (mobile) -->
-                    <button id="menu-btn" class="md:hidden text-3xl text-gray-700 focus:outline-none">
-                        ☰
-                    </button>
+                    <button id="menu-btn" class="md:hidden text-3xl text-gray-700 focus:outline-none">☰</button>
                 </div>
             </div>
-
             <!-- Menu mobile -->
             <div id="mobile-menu" class="hidden flex-col space-y-4 mt-4 md:hidden">
                 <a href="#" class="text-gray-700 hover:text-primary transition-colors">Accueil</a>
@@ -132,21 +94,16 @@
                 <hr><br>
                 <a href="#contact" class="text-gray-700 hover:text-primary transition-colors">Contact</a>
                 <hr>
-
-                <div class="flex items-center space-x-3 ">
-                    <a href="https://wa.me/1234567890" target="_blank"
-                        class="w-8 h-8 flex items-center justify-center rounded-full bg-green-100 text-green-500 hover:bg-green-500 hover:text-white shadow-sm hover:shadow-lg transform hover:-translate-y-1 transition-all duration-200 text-2xl">
+                <div class="flex items-center space-x-3">
+                    <a href="https://wa.me/1234567890" target="_blank" class="w-8 h-8 flex items-center justify-center rounded-full bg-green-100 text-green-500 hover:bg-green-500 hover:text-white shadow-sm hover:shadow-lg transform hover:-translate-y-1 transition-all duration-200 text-2xl">
                         <i class="ri-whatsapp-line"></i>
                     </a>
-                    <a href="https://www.linkedin.com/in/tonprofil" target="_blank"
-                        class="w-8 h-8 flex items-center justify-center rounded-full bg-blue-100 text-blue-600 hover:bg-blue-600 hover:text-white shadow-sm hover:shadow-lg transform hover:-translate-y-1 transition-all duration-200 text-2xl">
+                    <a href="https://www.linkedin.com/in/tonprofil" target="_blank" class="w-8 h-8 flex items-center justify-center rounded-full bg-blue-100 text-blue-600 hover:bg-blue-600 hover:text-white shadow-sm hover:shadow-lg transform hover:-translate-y-1 transition-all duration-200 text-2xl">
                         <i class="ri-linkedin-line"></i>
                     </a>
-                    <a href="https://www.instagram.com/tonprofil" target="_blank"
-                        class="w-8 h-8 flex items-center justify-center rounded-full bg-pink-100 text-pink-500 hover:bg-pink-500 hover:text-white shadow-sm hover:shadow-lg transform hover:-translate-y-1 transition-all duration-200 text-2xl">
+                    <a href="https://www.instagram.com/tonprofil" target="_blank" class="w-8 h-8 flex items-center justify-center rounded-full bg-pink-100 text-pink-500 hover:bg-pink-500 hover:text-white shadow-sm hover:shadow-lg transform hover:-translate-y-1 transition-all duration-200 text-2xl">
                         <i class="ri-instagram-line"></i>
                     </a>
-                    <hr>
                 </div>
             </div>
         </div>
@@ -164,9 +121,8 @@
             // Notifications popup
             const notifBtn = document.getElementById("notif-btn");
             const notifPopup = document.getElementById("notif-popup");
-
             notifBtn.addEventListener("click", (e) => {
-                e.stopPropagation(); // empêche la fermeture immédiate
+                e.stopPropagation();
                 notifPopup.classList.toggle("hidden");
             });
 
@@ -178,23 +134,31 @@
             });
         });
     </script>
+
+    <div class="bg-primary/10 py-3 px-6">
+        <div class="flex items-center justify-center space-x-2">
+            <div class="w-4 h-4 flex items-center justify-center">
+                <i class="ri-book-fill text-primary"></i>
+            </div>
+            <span class="text-primary font-medium">Prenez rendez-vous 24h/24 - 7j/7</span>
+        </div>
+    </div>
+
     <main>
         <section class="py-20">
             <div class="max-w-4xl mx-auto px-6">
                 <div class="text-center mb-12">
                     <h1 class="text-4xl font-bold text-gray-900 mb-4">Prendre un Rendez-vous</h1>
-                    <p class="text-xl text-gray-600">
-                        Réservez votre consultation en quelques clics
-                    </p>
+                    <p class="text-xl text-gray-600">Réservez votre consultation en quelques clics</p>
                 </div>
-                <div class="bg-white rounded-2xl shadow-lg p-8">
+
+                <div class="bg-white rounded-2xl shadow-lg p-8 ">
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                         <div class="space-y-6">
                             <div>
                                 <label class="block text-sm font-medium text-gray-700 mb-2">Service médical</label>
                                 <div class="relative">
-                                    <select id="service" name="service"
-                                        class="w-full pl-4 pr-10 py-3 bg-white border border-gray-200 rounded-lg appearance-none focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary">
+                                    <select id="service" name="service" class="w-full pl-4 pr-10 py-3 bg-white border border-gray-200 rounded-lg appearance-none focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary">
                                         <option value="">Sélectionnez un service</option>
                                         <option value="cardiologie">Cardiologie</option>
                                         <option value="pediatrie">Pédiatrie</option>
@@ -209,11 +173,11 @@
                                     </div>
                                 </div>
                             </div>
+
                             <div>
                                 <label class="block text-sm font-medium text-gray-700 mb-2">Médecin</label>
                                 <div class="relative">
-                                    <select id="doctor" name="doctor"
-                                        class="w-full pl-4 pr-10 py-3 bg-white border border-gray-200 rounded-lg appearance-none focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary">
+                                    <select id="doctor" name="doctor" class="w-full pl-4 pr-10 py-3 bg-white border border-gray-200 rounded-lg appearance-none focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary">
                                         <option value="">Choisissez un médecin</option>
                                         <option value="dr-dubois">Dr. Marie Dubois</option>
                                         <option value="dr-martin">Dr. Jean Martin</option>
@@ -227,127 +191,82 @@
                                     </div>
                                 </div>
                             </div>
+
                             <div>
                                 <label class="block text-sm font-medium text-gray-700 mb-2">Date</label>
                                 <div class="relative">
-                                    <input type="date" id="date" name="date" min="2024-08-26"
-                                        class="w-full pl-4 pr-10 py-3 bg-white border border-gray-200 rounded-lg appearance-none focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary">
+                                    <input type="date" id="date" name="date" min="2024-08-26" class="w-full pl-4 pr-10 py-3 bg-white border border-gray-200 rounded-lg appearance-none focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary">
                                 </div>
                             </div>
                         </div>
+
                         <div class="md:col-span-2">
                             <label class="block text-sm font-medium text-gray-700 mb-4">Horaires disponibles</label>
                             <div class="grid grid-cols-3 gap-3">
-                                <button
-                                    class="p-3 border border-gray-200 rounded-lg text-center hover:border-primary hover:bg-primary/5 transition-colors"
-                                    data-time="09:00">
-                                    09:00
-                                </button>
-                                <button
-                                    class="p-3 border border-gray-200 rounded-lg text-center hover:border-primary hover:bg-primary/5 transition-colors"
-                                    data-time="09:30">
-                                    09:30
-                                </button>
-                                <button
-                                    class="p-3 border border-gray-200 rounded-lg text-center hover:border-primary hover:bg-primary/5 transition-colors"
-                                    data-time="10:00">
-                                    10:00
-                                </button>
-                                <button
-                                    class="p-3 border border-gray-200 rounded-lg text-center hover:border-primary hover:bg-primary/5 transition-colors"
-                                    data-time="10:30">
-                                    10:30
-                                </button>
-                                <button
-                                    class="p-3 border border-gray-200 rounded-lg text-center hover:border-primary hover:bg-primary/5 transition-colors"
-                                    data-time="11:00">
-                                    11:00
-                                </button>
-                                <button
-                                    class="p-3 border border-gray-200 rounded-lg text-center hover:border-primary hover:bg-primary/5 transition-colors"
-                                    data-time="11:30">
-                                    11:30
-                                </button>
-                                <button
-                                    class="p-3 border border-gray-200 rounded-lg text-center hover:border-primary hover:bg-primary/5 transition-colors"
-                                    data-time="14:00">
-                                    14:00
-                                </button>
-                                <button
-                                    class="p-3 border border-gray-200 rounded-lg text-center hover:border-primary hover:bg-primary/5 transition-colors"
-                                    data-time="14:30">
-                                    14:30
-                                </button>
-                                <button
-                                    class="p-3 border border-gray-200 rounded-lg text-center hover:border-primary hover:bg-primary/5 transition-colors"
-                                    data-time="15:00">
-                                    15:00
-                                </button>
+                                <button class="p-3 border border-gray-200 rounded-lg text-center hover:border-primary hover:bg-primary/5 transition-colors" data-time="09:00">09:00</button>
+                                <button class="p-3 border border-gray-200 rounded-lg text-center hover:border-primary hover:bg-primary/5 transition-colors" data-time="09:30">09:30</button>
+                                <button class="p-3 border border-gray-200 rounded-lg text-center hover:border-primary hover:bg-primary/5 transition-colors" data-time="10:00">10:00</button>
+                                <button class="p-3 border border-gray-200 rounded-lg text-center hover:border-primary hover:bg-primary/5 transition-colors" data-time="10:30">10:30</button>
+                                <button class="p-3 border border-gray-200 rounded-lg text-center hover:border-primary hover:bg-primary/5 transition-colors" data-time="11:00">11:00</button>
+                                <button class="p-3 border border-gray-200 rounded-lg text-center hover:border-primary hover:bg-primary/5 transition-colors" data-time="11:30">11:30</button>
+                                <button class="p-3 border border-gray-200 rounded-lg text-center hover:border-primary hover:bg-primary/5 transition-colors" data-time="14:00">14:00</button>
+                                <button class="p-3 border border-gray-200 rounded-lg text-center hover:border-primary hover:bg-primary/5 transition-colors" data-time="14:30">14:30</button>
+                                <button class="p-3 border border-gray-200 rounded-lg text-center hover:border-primary hover:bg-primary/5 transition-colors" data-time="15:00">15:00</button>
                             </div>
                         </div>
                     </div>
+
                     <div class="mt-8 border-t border-gray-200 pt-8">
                         <div class="space-y-6">
                             <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-2">Motif de la
-                                    consultation</label>
-                                <textarea id="reason" name="reason" rows="3" maxlength="500"
-                                    class="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary"
-                                    placeholder="Décrivez brièvement la raison de votre consultation..."></textarea>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Motif de la consultation</label>
+                                <textarea id="reason" name="reason" rows="3" maxlength="500" class="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary" placeholder="Décrivez brièvement la raison de votre consultation..."></textarea>
                                 <p class="mt-2 text-sm text-gray-500 flex justify-end">
                                     <span id="char-count">0</span>/500 caractères
                                 </p>
                             </div>
+
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div>
                                     <label class="block text-sm font-medium text-gray-700 mb-2">Nom</label>
-                                    <input type="text" id="name" name="name"
-                                        class="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary"
-                                        placeholder="Votre nom">
+                                    <input type="text" id="name" name="name" class="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary" placeholder="Votre nom">
                                 </div>
                                 <div>
                                     <label class="block text-sm font-medium text-gray-700 mb-2">Prénom</label>
-                                    <input type="text" id="firstname" name="firstname"
-                                        class="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary"
-                                        placeholder="Votre prénom">
+                                    <input type="text" id="firstname" name="firstname" class="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary" placeholder="Votre prénom">
                                 </div>
                                 <div>
                                     <label class="block text-sm font-medium text-gray-700 mb-2">Email</label>
-                                    <input type="email" id="email" name="email"
-                                        class="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary"
-                                        placeholder="votre.email@exemple.com">
+                                    <input type="email" id="email" name="email" class="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary" placeholder="votre.email@exemple.com">
                                 </div>
                                 <div>
                                     <label class="block text-sm font-medium text-gray-700 mb-2">Téléphone</label>
-                                    <input type="tel" id="phone" name="phone"
-                                        class="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary"
-                                        placeholder="06 12 34 56 78">
+                                    <input type="tel" id="phone" name="phone" class="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary" placeholder="06 12 34 56 78">
                                 </div>
                             </div>
                         </div>
                     </div>
+
                     <div class="mt-8 flex justify-end">
-                        <button id="submit-appointment"
-                            class="bg-primary text-white px-8 py-3 rounded-button hover:bg-primary/90 transition-colors font-semibold whitespace-nowrap !rounded-button">
+                        <button id="submit-appointment" class="bg-primary text-white px-8 py-3 rounded-button hover:bg-primary/90 transition-colors font-semibold whitespace-nowrap !rounded-button">
                             Confirmer le rendez-vous
                         </button>
                     </div>
                 </div>
-                <div id="confirmation-modal"
-                    class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+
+                <!-- Modal de confirmation -->
+                <div id="confirmation-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
                     <div class="bg-white rounded-2xl shadow-xl max-w-lg w-full mx-4 p-8">
                         <div class="text-center mb-6">
-                            <div
-                                class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
                                 <div class="w-8 h-8 flex items-center justify-center">
                                     <i class="ri-check-line text-green-500 text-2xl"></i>
                                 </div>
                             </div>
                             <h3 class="text-2xl font-semibold text-gray-900 mb-2">Rendez-vous confirmé !</h3>
-                            <p class="text-gray-600">
-                                Votre rendez-vous a été enregistré avec succès.
-                            </p>
+                            <p class="text-gray-600">Votre rendez-vous a été enregistré avec succès.</p>
                         </div>
+
                         <div class="bg-gray-50 rounded-xl p-6 mb-6">
                             <div class="space-y-3">
                                 <div class="flex justify-between">
@@ -364,131 +283,69 @@
                                 </div>
                             </div>
                         </div>
+
                         <div class="flex flex-col space-y-3">
-                            <button id="download-ticket"
-                                class="bg-primary text-white px-6 py-3 rounded-button hover:bg-primary/90 transition-colors font-semibold whitespace-nowrap !rounded-button flex items-center justify-center">
+                            <button id="download-ticket" class="bg-primary text-white px-6 py-3 rounded-button hover:bg-primary/90 transition-colors font-semibold whitespace-nowrap !rounded-button flex items-center justify-center">
                                 <div class="w-5 h-5 flex items-center justify-center mr-2">
                                     <i class="ri-download-line"></i>
                                 </div>
-                                Télécharger le ticket
+                                Télécharger le ticket (Image)
                             </button>
-                            <button id="close-modal"
-                                class="text-gray-600 hover:text-gray-800 transition-colors font-medium">
+                            <button id="close-modal" class="text-gray-600 hover:text-gray-800 transition-colors font-medium">
                                 Fermer
                             </button>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <!-- Canvas caché pour génération d'image -->
+            <canvas id="ticket-canvas" style="display: none;" width="800" height="1000"></canvas>
         </section>
     </main>
-    <footer class="bg-gray-900 text-white py-16">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+
+    <footer class="bg-gray-900 text-white py-12 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-8">
                 <div>
-                    <h3 class="text-xl font-semibold mb-6">Hôpital Saint-Michel</h3>
-                    <p class="text-gray-300 mb-4">
-                        Excellence médicale et soins personnalisés depuis 1985
-                    </p>
-                    <div class="flex space-x-4">
-                        <a href="#"
-                            class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-700 transition-colors">
-                            <div class="w-5 h-5 flex items-center justify-center">
-                                <i class="ri-facebook-fill text-blue-500"></i>
-                            </div>
-                        </a>
-                        <a href="#"
-                            class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-700 transition-colors">
-                            <div class="w-5 h-5 flex items-center justify-center">
-                                <i class="ri-twitter-fill text-blue-400"></i>
-                            </div>
-                        </a>
-                        <a href="#"
-                            class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-700 transition-colors">
-                            <div class="w-5 h-5 flex items-center justify-center">
-                                <i class="ri-linkedin-fill text-blue-600"></i>
-                            </div>
-                        </a>
-                    </div>
+                    <div class="font-['Pacifico'] text-xl mb-4"><img width="150px" src="LOGO.png" alt=""></div>
+                    <p class="text-gray-400 text-sm">Clinic Sama Santé - Excellence médicale et soins de qualité depuis 2008.</p>
                 </div>
                 <div>
-                    <h4 class="text-lg font-semibold mb-6">Contact</h4>
-                    <div class="space-y-4">
-                        <div class="flex items-center">
-                            <div class="w-5 h-5 flex items-center justify-center mr-3">
-                                <i class="ri-map-pin-line text-gray-400"></i>
-                            </div>
-                            <span class="text-gray-300">123 Avenue de la Santé, 75014 Paris</span>
-                        </div>
-                        <div class="flex items-center">
-                            <div class="w-5 h-5 flex items-center justify-center mr-3">
-                                <i class="ri-phone-line text-gray-400"></i>
-                            </div>
-                            <span class="text-gray-300">01 42 34 56 78</span>
-                        </div>
-                        <div class="flex items-center">
-                            <div class="w-5 h-5 flex items-center justify-center mr-3">
-                                <i class="ri-mail-line text-gray-400"></i>
-                            </div>
-                            <span class="text-gray-300">contact@hopital-saint-michel.fr</span>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <h4 class="text-lg font-semibold mb-6">Services</h4>
-                    <ul class="space-y-3">
-                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Consultations</a>
-                        </li>
-                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Urgences 24h/24</a>
-                        </li>
-                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Chirurgie</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Imagerie
-                                médicale</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Laboratoire</a>
-                        </li>
+                    <h3 class="font-semibold mb-4">Services</h3>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-white">Consultations</a></li>
+                        <li><a href="#" class="hover:text-white">Hospitalisation</a></li>
+                        <li><a href="#" class="hover:text-white">Chirurgie</a></li>
+                        <li><a href="#" class="hover:text-white">Imagerie médicale</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="text-lg font-semibold mb-6">Urgences</h4>
-                    <div class="space-y-4">
-                        <div class="p-4 bg-red-600 rounded-lg">
-                            <div class="flex items-center mb-2">
-                                <div class="w-5 h-5 flex items-center justify-center mr-2">
-                                    <i class="ri-phone-fill text-white"></i>
-                                </div>
-                                <span class="font-semibold">SAMU : 15</span>
-                            </div>
-                            <p class="text-sm text-red-100">Urgences vitales</p>
-                        </div>
-                        <div class="p-4 bg-blue-600 rounded-lg">
-                            <div class="flex items-center mb-2">
-                                <div class="w-5 h-5 flex items-center justify-center mr-2">
-                                    <i class="ri-hospital-line text-white"></i>
-                                </div>
-                                <span class="font-semibold">Urgences : 01 42 34 56 99</span>
-                            </div>
-                            <p class="text-sm text-blue-100">Service d'urgences</p>
-                        </div>
-                    </div>
+                    <h3 class="font-semibold mb-4">Urgences</h3>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li>SAMU : 1515</li>
+                        <li>Pompiers : 18</li>
+                        <li>Urgences : 112</li>
+                        <li>Centre antipoison : 77 212 12 12</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-semibold mb-4">Contact</h3>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li>33 878 78 78</li>
+                        <li>sama-santé@gmail.com</li>
+                        <li>keur massar, cité apix</li>
+                        <li>632 Apix,sangalkam</li>
+                    </ul>
                 </div>
             </div>
-            <div class="border-t border-gray-800 pt-8">
-                <div class="flex flex-col md:flex-row items-center justify-between">
-                    <p class="text-gray-400 text-sm">
-                        © 2024 Hôpital Saint-Michel. Tous droits réservés.
-                    </p>
-                    <div class="flex space-x-6 mt-4 md:mt-0">
-                        <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Mentions
-                            légales</a>
-                        <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Politique de
-                            confidentialité</a>
-                        <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">CGU</a>
-                    </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <div class="text-sm text-gray-400">
+                    © 2025 Clinic Sama Santé. Tous droits réservés.
                 </div>
             </div>
         </div>
     </footer>
-
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
@@ -499,6 +356,7 @@
             const closeModalButton = document.getElementById('close-modal');
             const downloadTicketButton = document.getElementById('download-ticket');
 
+            // Compteur de caractères
             reasonTextarea.addEventListener('input', function () {
                 const count = this.value.length;
                 charCount.textContent = count;
@@ -508,6 +366,7 @@
                 }
             });
 
+            // Soumission du formulaire
             submitButton.addEventListener('click', function () {
                 const service = document.getElementById('service').value;
                 const doctor = document.getElementById('doctor').value;
@@ -519,25 +378,27 @@
                 const email = document.getElementById('email').value;
                 const phone = document.getElementById('phone').value;
 
+                // Validation
                 if (!service || !doctor || !date || !selectedTime || !reason || !name || !firstname || !email || !phone) {
                     const notification = document.createElement('div');
                     notification.className = 'fixed top-4 right-4 bg-red-100 border-l-4 border-red-500 p-4 rounded shadow-lg z-50';
                     notification.innerHTML = `
-<div class="flex items-start">
-<div class="w-6 h-6 flex items-center justify-center mr-3">
-<i class="ri-error-warning-line text-red-500"></i>
-</div>
-<div>
-<p class="font-medium text-red-800">Erreur</p>
-<p class="text-sm text-red-600">Veuillez remplir tous les champs obligatoires</p>
-</div>
-</div>
-`;
+                        <div class="flex items-start">
+                            <div class="w-6 h-6 flex items-center justify-center mr-3">
+                                <i class="ri-error-warning-line text-red-500"></i>
+                            </div>
+                            <div>
+                                <p class="font-medium text-red-800">Erreur</p>
+                                <p class="text-sm text-red-600">Veuillez remplir tous les champs obligatoires</p>
+                            </div>
+                        </div>
+                    `;
                     document.body.appendChild(notification);
                     setTimeout(() => notification.remove(), 3000);
                     return;
                 }
 
+                // Mise à jour du modal de confirmation
                 document.getElementById('confirm-service').textContent = document.getElementById('service').options[document.getElementById('service').selectedIndex].text;
                 document.getElementById('confirm-doctor').textContent = document.getElementById('doctor').options[document.getElementById('doctor').selectedIndex].text;
                 document.getElementById('confirm-datetime').textContent = `${date} à ${selectedTime}`;
@@ -545,48 +406,215 @@
                 confirmationModal.classList.remove('hidden');
             });
 
+            // Fermer modal
             closeModalButton.addEventListener('click', function () {
                 confirmationModal.classList.add('hidden');
             });
 
-            downloadTicketButton.addEventListener('click', function () {
+            // Fonction pour générer le ticket en image
+            function generateTicketImage() {
+                const canvas = document.getElementById('ticket-canvas');
+                const ctx = canvas.getContext('2d');
+
+                // Couleurs
+                const primaryColor = '#2563eb';
+                const textColor = '#1f2937';
+                const lightGray = '#f3f4f6';
+
+                // Effacer le canvas
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+                // Fond blanc
+                ctx.fillStyle = '#ffffff';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+                // En-tête coloré
+                ctx.fillStyle = primaryColor;
+                ctx.fillRect(0, 0, canvas.width, 120);
+
+                // Titre
+                ctx.fillStyle = '#ffffff';
+                ctx.font = 'bold 36px Arial';
+                ctx.textAlign = 'center';
+                ctx.fillText('CLINIC SAMA SANTÉ', canvas.width / 2, 50);
+                ctx.font = '24px Arial';
+                ctx.fillText('Ticket de Rendez-vous', canvas.width / 2, 90);
+
+                // Récupération des données
                 const service = document.getElementById('service').options[document.getElementById('service').selectedIndex].text;
                 const doctor = document.getElementById('doctor').options[document.getElementById('doctor').selectedIndex].text;
                 const date = document.getElementById('date').value;
                 const time = document.querySelector('[data-time].border-primary')?.getAttribute('data-time');
                 const name = document.getElementById('name').value;
                 const firstname = document.getElementById('firstname').value;
+                const reason = document.getElementById('reason').value;
 
-                const ticketContent = `
-Hôpital Saint-Michel
-Ticket de Rendez-vous
+                // Date de formatage français
+                const dateObj = new Date(date);
+                const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+                const frenchDate = dateObj.toLocaleDateString('fr-FR', options);
 
-Patient: ${firstname} ${name}
-Service: ${service}
-Médecin: ${doctor}
-Date: ${date}
-Heure: ${time}
+                // Informations du patient
+                ctx.fillStyle = textColor;
+                ctx.font = 'bold 28px Arial';
+                ctx.textAlign = 'left';
+                let y = 180;
 
-Merci de vous présenter 15 minutes avant votre rendez-vous.
-N'oubliez pas votre carte vitale et votre pièce d'identité.
-`;
+                ctx.fillText('INFORMATIONS PATIENT', 50, y);
+                y += 50;
 
-                const blob = new Blob([ticketContent], { type: 'text/plain' });
-                const url = window.URL.createObjectURL(blob);
-                const a = document.createElement('a');
-                a.href = url;
-                a.download = `rdv-hopital-${date}.txt`;
-                a.click();
-                window.URL.revokeObjectURL(url);
+                ctx.font = '22px Arial';
+                ctx.fillText(`Nom : ${name.toUpperCase()}`, 50, y);
+                y += 40;
+                ctx.fillText(`Prénom : ${firstname}`, 50, y);
+                y += 80;
+
+                // Détails du rendez-vous
+                ctx.font = 'bold 28px Arial';
+                ctx.fillText('DÉTAILS DU RENDEZ-VOUS', 50, y);
+                y += 50;
+
+                ctx.font = '22px Arial';
+                ctx.fillText(`Service : ${service}`, 50, y);
+                y += 40;
+                ctx.fillText(`Médecin : ${doctor}`, 50, y);
+                y += 40;
+                ctx.fillText(`Date : ${frenchDate}`, 50, y);
+                y += 40;
+                ctx.fillText(`Heure : ${time}`, 50, y);
+                y += 60;
+
+                // Motif de consultation
+                ctx.font = 'bold 28px Arial';
+                ctx.fillText('MOTIF DE CONSULTATION', 50, y);
+                y += 50;
+
+                ctx.font = '20px Arial';
+                // Diviser le texte du motif en plusieurs lignes si nécessaire
+                const maxWidth = canvas.width - 100;
+                const words = reason.split(' ');
+                let line = '';
+                
+                for (let n = 0; n < words.length; n++) {
+                    const testLine = line + words[n] + ' ';
+                    const metrics = ctx.measureText(testLine);
+                    const testWidth = metrics.width;
+                    if (testWidth > maxWidth && n > 0) {
+                        ctx.fillText(line, 50, y);
+                        line = words[n] + ' ';
+                        y += 30;
+                    } else {
+                        line = testLine;
+                    }
+                }
+                ctx.fillText(line, 50, y);
+                y += 80;
+
+                // Instructions
+                ctx.fillStyle = primaryColor;
+                ctx.fillRect(50, y, canvas.width - 100, 2);
+                y += 40;
+
+                ctx.fillStyle = textColor;
+                ctx.font = 'bold 24px Arial';
+                ctx.fillText('INSTRUCTIONS IMPORTANTES', 50, y);
+                y += 40;
+
+                ctx.font = '18px Arial';
+                ctx.fillText('• Veuillez vous présenter 15 minutes avant votre rendez-vous', 50, y);
+                y += 30;
+                ctx.fillText('• N\'oubliez pas votre carte vitale et pièce d\'identité', 50, y);
+                y += 30;
+                ctx.fillText('• En cas d\'empêchement, merci de nous prévenir 24h à l\'avance', 50, y);
+                y += 60;
+
+                // Contact
+                ctx.fillStyle = lightGray;
+                ctx.fillRect(50, y, canvas.width - 100, 80);
+
+                ctx.fillStyle = textColor;
+                ctx.font = 'bold 20px Arial';
+                ctx.fillText('CONTACT', 60, y + 30);
+                ctx.font = '18px Arial';
+                ctx.fillText('Tél : 33 878 78 78 | Email : sama-santé@gmail.com', 60, y + 55);
+
+                // Numéro de ticket (généré aléatoirement)
+                const ticketNumber = 'RDV' + Date.now().toString().slice(-8);
+                ctx.fillStyle = primaryColor;
+                ctx.font = 'bold 16px Arial';
+                ctx.textAlign = 'right';
+                ctx.fillText(`N° Ticket: ${ticketNumber}`, canvas.width - 60, canvas.height - 30);
+
+                return canvas;
+            }
+
+            // Téléchargement du ticket en image
+            downloadTicketButton.addEventListener('click', function () {
+                try {
+                    const canvas = generateTicketImage();
+                    
+                    // Convertir en image et télécharger
+                    canvas.toBlob(function(blob) {
+                        const url = URL.createObjectURL(blob);
+                        const a = document.createElement('a');
+                        a.href = url;
+                        a.download = `ticket-rdv-${document.getElementById('date').value}.png`;
+                        document.body.appendChild(a);
+                        a.click();
+                        document.body.removeChild(a);
+                        URL.revokeObjectURL(url);
+                        
+                        // Notification de succès
+                        const notification = document.createElement('div');
+                        notification.className = 'fixed top-4 right-4 bg-green-100 border-l-4 border-green-500 p-4 rounded shadow-lg z-50';
+                        notification.innerHTML = `
+                            <div class="flex items-start">
+                                <div class="w-6 h-6 flex items-center justify-center mr-3">
+                                    <i class="ri-check-line text-green-500"></i>
+                                </div>
+                                <div>
+                                    <p class="font-medium text-green-800">Succès</p>
+                                    <p class="text-sm text-green-600">Ticket téléchargé avec succès</p>
+                                </div>
+                            </div>
+                        `;
+                        document.body.appendChild(notification);
+                        setTimeout(() => notification.remove(), 3000);
+                    }, 'image/png');
+                    
+                } catch (error) {
+                    console.error('Erreur lors de la génération du ticket:', error);
+                    
+                    // Notification d'erreur
+                    const notification = document.createElement('div');
+                    notification.className = 'fixed top-4 right-4 bg-red-100 border-l-4 border-red-500 p-4 rounded shadow-lg z-50';
+                    notification.innerHTML = `
+                        <div class="flex items-start">
+                            <div class="w-6 h-6 flex items-center justify-center mr-3">
+                                <i class="ri-error-warning-line text-red-500"></i>
+                            </div>
+                            <div>
+                                <p class="font-medium text-red-800">Erreur</p>
+                                <p class="text-sm text-red-600">Impossible de générer le ticket</p>
+                            </div>
+                        </div>
+                    `;
+                    document.body.appendChild(notification);
+                    setTimeout(() => notification.remove(), 3000);
+                }
             });
 
+            // Gestion des créneaux horaires
             const timeSlots = document.querySelectorAll('[data-time]');
             timeSlots.forEach(slot => {
                 slot.addEventListener('click', function () {
+                    // Retirer la sélection des autres créneaux
                     timeSlots.forEach(s => {
                         s.classList.remove('border-primary', 'bg-primary/10');
                         s.classList.add('border-gray-200');
                     });
+                    
+                    // Sélectionner le créneau cliqué
                     this.classList.remove('border-gray-200');
                     this.classList.add('border-primary', 'bg-primary/10');
                 });
@@ -595,86 +623,77 @@ N'oubliez pas votre carte vitale et votre pièce d'identité.
     </script>
 
     <!-- Bouton flottant du chatbot -->
-<div id="chatbot-button"
-    class="fixed bottom-6 right-6 bg-primary text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg cursor-pointer hover:scale-110 transition-transform z-50">
-    <i class="ri-message-3-line text-2xl"></i>
-</div>
-
-<!-- Popup chatbot -->
-<div id="chatbot-popup"
-    class="hidden fixed bottom-20 right-6 w-80 bg-white rounded-lg shadow-lg border border-gray-200 z-50 flex flex-col">
-    <!-- Header -->
-    <div class="bg-primary text-white p-3 rounded-t-lg flex justify-between items-center">
-        <span class="font-semibold">Assistant Sama Santé</span>
-        <button id="chatbot-close" class="text-white hover:text-gray-200">
-            <i class="ri-close-line text-xl"></i>
-        </button>
+    <div id="chatbot-button" class="fixed bottom-6 right-6 bg-primary text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg cursor-pointer hover:scale-110 transition-transform z-50">
+        <i class="ri-message-3-line text-2xl"></i>
     </div>
 
-    <!-- Messages -->
-    <div id="chatbot-messages" class="p-4 space-y-3 h-64 overflow-y-auto text-sm text-gray-700">
-        <div class="bg-gray-100 p-2 rounded-lg w-max max-w-[75%]">👋 Bonjour ! Comment puis-je vous aider ?</div>
+    <!-- Popup chatbot -->
+    <div id="chatbot-popup" class="hidden fixed bottom-20 right-6 w-80 bg-white rounded-lg shadow-lg border border-gray-200 z-50 flex flex-col">
+        <!-- Header -->
+        <div class="bg-primary text-white p-3 rounded-t-lg flex justify-between items-center">
+            <span class="font-semibold">Assistant Sama Santé</span>
+            <button id="chatbot-close" class="text-white hover:text-gray-200">
+                <i class="ri-close-line text-xl"></i>
+            </button>
+        </div>
+        
+        <!-- Messages -->
+        <div id="chatbot-messages" class="p-4 space-y-3 h-64 overflow-y-auto text-sm text-gray-700">
+            <div class="bg-gray-100 p-2 rounded-lg w-max max-w-[75%]">👋 Bonjour ! Comment puis-je vous aider ?</div>
+        </div>
+        
+        <!-- Zone de saisie -->
+        <form id="chatbot-form" class="p-3 border-t flex items-center space-x-2">
+            <input type="text" id="chatbot-input" placeholder="Écrivez votre message..." class="flex-1 border rounded-lg px-3 py-2 focus:ring-2 focus:ring-primary outline-none text-sm">
+            <button type="submit" class="bg-primary text-white px-3 py-2 rounded-lg hover:bg-primary/90">
+                <i class="ri-send-plane-2-line"></i>
+            </button>
+        </form>
     </div>
 
-    <!-- Zone de saisie -->
-    <form id="chatbot-form" class="p-3 border-t flex items-center space-x-2">
-        <input type="text" id="chatbot-input" placeholder="Écrivez votre message..."
-            class="flex-1 border rounded-lg px-3 py-2 focus:ring-2 focus:ring-primary outline-none text-sm">
-        <button type="submit" class="bg-primary text-white px-3 py-2 rounded-lg hover:bg-primary/90">
-            <i class="ri-send-plane-2-line"></i>
-        </button>
-    </form>
-</div>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const chatBtn = document.getElementById("chatbot-button");
+            const chatPopup = document.getElementById("chatbot-popup");
+            const chatClose = document.getElementById("chatbot-close");
+            const chatForm = document.getElementById("chatbot-form");
+            const chatInput = document.getElementById("chatbot-input");
+            const chatMessages = document.getElementById("chatbot-messages");
 
-<script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const chatBtn = document.getElementById("chatbot-button");
-        const chatPopup = document.getElementById("chatbot-popup");
-        const chatClose = document.getElementById("chatbot-close");
-        const chatForm = document.getElementById("chatbot-form");
-        const chatInput = document.getElementById("chatbot-input");
-        const chatMessages = document.getElementById("chatbot-messages");
+            // Ouvrir / fermer le chatbot
+            chatBtn.addEventListener("click", () => {
+                chatPopup.classList.toggle("hidden");
+            });
 
-        // Ouvrir / fermer le chatbot
-        chatBtn.addEventListener("click", () => {
-            chatPopup.classList.toggle("hidden");
-        });
-        chatClose.addEventListener("click", () => {
-            chatPopup.classList.add("hidden");
-        });
+            chatClose.addEventListener("click", () => {
+                chatPopup.classList.add("hidden");
+            });
 
-        // Gestion des messages
-        chatForm.addEventListener("submit", (e) => {
-            e.preventDefault();
-            const userMsg = chatInput.value.trim();
-            if (userMsg === "") return;
+            // Gestion des messages
+            chatForm.addEventListener("submit", (e) => {
+                e.preventDefault();
+                const userMsg = chatInput.value.trim();
+                if (userMsg === "") return;
 
-            // Afficher message utilisateur
-            const userDiv = document.createElement("div");
-            userDiv.className = "bg-primary text-white p-2 rounded-lg w-max max-w-[75%] ml-auto";
-            userDiv.textContent = userMsg;
-            chatMessages.appendChild(userDiv);
+                // Afficher message utilisateur
+                const userDiv = document.createElement("div");
+                userDiv.className = "bg-primary text-white p-2 rounded-lg w-max max-w-[75%] ml-auto";
+                userDiv.textContent = userMsg;
+                chatMessages.appendChild(userDiv);
+                chatInput.value = "";
 
-            chatInput.value = "";
+                // Réponse simple du bot
+                setTimeout(() => {
+                    const botDiv = document.createElement("div");
+                    botDiv.className = "bg-gray-100 p-2 rounded-lg w-max max-w-[75%]";
+                    botDiv.textContent = "Merci pour votre message. Un agent vous répondra bientôt.";
+                    chatMessages.appendChild(botDiv);
+                    chatMessages.scrollTop = chatMessages.scrollHeight;
+                }, 800);
 
-            // Réponse simple du bot (exemple)
-            setTimeout(() => {
-                const botDiv = document.createElement("div");
-                botDiv.className = "bg-gray-100 p-2 rounded-lg w-max max-w-[75%]";
-                botDiv.textContent = "Merci pour votre message. Un agent vous répondra bientôt.";
-                chatMessages.appendChild(botDiv);
                 chatMessages.scrollTop = chatMessages.scrollHeight;
-            }, 800);
-
-            chatMessages.scrollTop = chatMessages.scrollHeight;
+            });
         });
-    });
-</script>
-
-
-    <script src="https://static.readdy.ai/static/share.js"></script>
-
-
+    </script>
 </body>
-
 </html>

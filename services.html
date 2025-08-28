@@ -1,0 +1,1514 @@
+<!-- <!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hôpital Saint-Michel - Services Médicaux en Ligne</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config = { theme: { extend: { colors: { primary: '#2563eb', secondary: '#059669' }, borderRadius: { 'none': '0px', 'sm': '4px', DEFAULT: '8px', 'md': '12px', 'lg': '16px', 'xl': '20px', '2xl': '24px', '3xl': '32px', 'full': '9999px', 'button': '8px' } } } }</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <style>
+        :where([class^="ri-"])::before {
+            content: "\f3c2";
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+    <header class="bg-white shadow-sm border-b border-gray-100">
+        <div class="w-full px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-8">
+                    <h1 class="text-2xl font-['Pacifico'] text-primary">logo</h1>
+                    <nav class="hidden md:flex space-x-8">
+                        <a href="#" class="text-gray-700 hover:text-primary transition-colors">Accueil</a>
+                        <a href="#services" class="text-gray-700 hover:text-primary transition-colors">Services</a>
+                        <a href="#rendez-vous"
+                            class="text-gray-700 hover:text-primary transition-colors">Rendez-vous</a>
+                        <a href="#urgences" class="text-gray-700 hover:text-primary transition-colors">Urgences</a>
+                        <a href="#contact" class="text-gray-700 hover:text-primary transition-colors">Contact</a>
+                    </nav>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <div class="relative">
+                        <div class="w-6 h-6 flex items-center justify-center">
+                            <i class="ri-search-line text-gray-400"></i>
+                        </div>
+                        <input type="text" placeholder="Rechercher un service ou médecin..."
+                            class="pl-10 pr-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary w-80">
+                    </div>
+                    <button
+                        class="bg-primary text-white px-6 py-2 rounded-button hover:bg-primary/90 transition-colors whitespace-nowrap !rounded-button">
+                        Se connecter
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="relative min-h-screen flex items-center"
+            style="background-image: url('https://readdy.ai/api/search-image?query=Modern%20hospital%20building%20with%20glass%20facade%20and%20medical%20staff%20in%20white%20coats%20walking%20in%20bright%20lobby%20with%20natural%20lighting%2C%20professional%20healthcare%20environment%2C%20clean%20minimalist%20design%2C%20soft%20blue%20and%20white%20color%20scheme%2C%20welcoming%20atmosphere&width=1920&height=1080&seq=hero001&orientation=landscape'); background-size: cover; background-position: center;">
+            <div class="absolute inset-0 bg-gradient-to-r from-white/95 via-white/80 to-transparent"></div>
+            <div class="relative w-full px-6 py-20">
+                <div class="max-w-2xl">
+                    <h1 class="text-5xl font-bold text-gray-900 mb-6 leading-tight">
+                        Votre santé, notre priorité
+                    </h1>
+                    <p class="text-xl text-gray-600 mb-8 leading-relaxed">
+                        Prenez rendez-vous en ligne, consultez vos dossiers médicaux et gérez vos soins de santé en
+                        toute simplicité avec l'Hôpital Saint-Michel.
+                    </p>
+                    <div class="flex space-x-4">
+                        <button
+                            class="bg-primary text-white px-8 py-4 rounded-button hover:bg-primary/90 transition-colors font-semibold whitespace-nowrap !rounded-button">
+                            Prendre rendez-vous
+                        </button>
+                        <button
+                            class="border-2 border-primary text-primary px-8 py-4 rounded-button hover:bg-primary hover:text-white transition-colors font-semibold whitespace-nowrap !rounded-button">
+                            Services d'urgence
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="services" class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold text-gray-900 mb-4">Nos Services Médicaux</h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                        Découvrez l'ensemble de nos départements médicaux et leurs disponibilités en temps réel
+                    </p>
+                    <div class="mt-8 flex justify-center">
+                        <a href="/services.html"
+                            class="inline-flex items-center text-primary hover:text-primary/80 font-medium">
+                            Voir tous nos services
+                            <i class="ri-arrow-right-line ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="flex justify-center mb-12">
+                    <div class="flex space-x-2 bg-gray-100 p-1 rounded-full">
+                        <button
+                            class="px-6 py-2 rounded-full bg-primary text-white transition-colors whitespace-nowrap !rounded-button"
+                            data-filter="all">
+                            Tous les services
+                        </button>
+                        <button
+                            class="px-6 py-2 rounded-full text-gray-600 hover:bg-white transition-colors whitespace-nowrap !rounded-button"
+                            data-filter="urgence">
+                            Urgences
+                        </button>
+                        <button
+                            class="px-6 py-2 rounded-full text-gray-600 hover:bg-white transition-colors whitespace-nowrap !rounded-button"
+                            data-filter="consultation">
+                            Consultations
+                        </button>
+                        <button
+                            class="px-6 py-2 rounded-full text-gray-600 hover:bg-white transition-colors whitespace-nowrap !rounded-button"
+                            data-filter="chirurgie">
+                            Chirurgie
+                        </button>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div
+                        class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-shadow">
+                        <div class="h-48 bg-cover bg-center"
+                            style="background-image: url('https://readdy.ai/api/search-image?query=Cardiology%20department%20with%20modern%20ECG%20machines%20and%20heart%20monitoring%20equipment%2C%20clean%20medical%20environment%20with%20blue%20and%20white%20color%20scheme%2C%20professional%20healthcare%20setting&width=400&height=300&seq=card001&orientation=landscape');">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-3">
+                                <h3 class="text-xl font-semibold text-gray-900">Cardiologie</h3>
+                                <span
+                                    class="inline-flex items-center px-3 py-1 rounded-full text-sm bg-green-100 text-green-800">
+                                    <div class="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
+                                    Disponible
+                                </span>
+                            </div>
+                            <p class="text-gray-600 mb-4">Consultations et examens cardiovasculaires avec équipements de
+                                pointe</p>
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm text-gray-500">Dr. Marie Dubois • Dr. Jean Martin</span>
+                                <button
+                                    class="text-primary hover:text-primary/80 font-medium whitespace-nowrap !rounded-button">
+                                    Voir les créneaux
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-shadow">
+                        <div class="h-48 bg-cover bg-center"
+                            style="background-image: url('https://readdy.ai/api/search-image?query=Pediatric%20department%20with%20colorful%20child-friendly%20medical%20equipment%20and%20toys%2C%20bright%20cheerful%20environment%20with%20soft%20colors%2C%20modern%20pediatric%20care%20setting&width=400&height=300&seq=ped001&orientation=landscape');">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-3">
+                                <h3 class="text-xl font-semibold text-gray-900">Pédiatrie</h3>
+                                <span
+                                    class="inline-flex items-center px-3 py-1 rounded-full text-sm bg-green-100 text-green-800">
+                                    <div class="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
+                                    Disponible
+                                </span>
+                            </div>
+                            <p class="text-gray-600 mb-4">Soins spécialisés pour enfants et adolescents dans un
+                                environnement adapté</p>
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm text-gray-500">Dr. Sophie Laurent • Dr. Pierre Moreau</span>
+                                <button
+                                    class="text-primary hover:text-primary/80 font-medium whitespace-nowrap !rounded-button">
+                                    Voir les créneaux
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-shadow">
+                        <div class="h-48 bg-cover bg-center"
+                            style="background-image: url('https://readdy.ai/api/search-image?query=Orthopedic%20surgery%20department%20with%20modern%20surgical%20equipment%20and%20X-ray%20machines%2C%20sterile%20medical%20environment%20with%20advanced%20technology&width=400&height=300&seq=ortho001&orientation=landscape');">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-3">
+                                <h3 class="text-xl font-semibold text-gray-900">Orthopédie</h3>
+                                <span
+                                    class="inline-flex items-center px-3 py-1 rounded-full text-sm bg-yellow-100 text-yellow-800">
+                                    <div class="w-2 h-2 bg-yellow-500 rounded-full mr-2"></div>
+                                    Limité
+                                </span>
+                            </div>
+                            <p class="text-gray-600 mb-4">Chirurgie et traumatologie des os, articulations et muscles
+                            </p>
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm text-gray-500">Dr. Antoine Rousseau • Dr. Claire Petit</span>
+                                <button
+                                    class="text-primary hover:text-primary/80 font-medium whitespace-nowrap !rounded-button">
+                                    Voir les créneaux
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-shadow">
+                        <div class="h-48 bg-cover bg-center"
+                            style="background-image: url('https://readdy.ai/api/search-image?query=Neurology%20department%20with%20brain%20scanning%20equipment%20and%20neurological%20testing%20devices%2C%20high-tech%20medical%20environment%20with%20modern%20technology&width=400&height=300&seq=neuro001&orientation=landscape');">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-3">
+                                <h3 class="text-xl font-semibold text-gray-900">Neurologie</h3>
+                                <span
+                                    class="inline-flex items-center px-3 py-1 rounded-full text-sm bg-red-100 text-red-800">
+                                    <div class="w-2 h-2 bg-red-500 rounded-full mr-2"></div>
+                                    Dr. absent
+                                </span>
+                            </div>
+                            <p class="text-gray-600 mb-4">Diagnostic et traitement des troubles du système nerveux</p>
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm text-gray-500">Dr. Michel Bernard (absent)</span>
+                                <button class="text-gray-400 cursor-not-allowed whitespace-nowrap !rounded-button">
+                                    Non disponible
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-shadow">
+                        <div class="h-48 bg-cover bg-center"
+                            style="background-image: url('https://readdy.ai/api/search-image?query=Radiology%20department%20with%20MRI%20and%20CT%20scan%20machines%2C%20modern%20medical%20imaging%20equipment%20in%20clean%20sterile%20environment&width=400&height=300&seq=radio001&orientation=landscape');">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-3">
+                                <h3 class="text-xl font-semibold text-gray-900">Radiologie</h3>
+                                <span
+                                    class="inline-flex items-center px-3 py-1 rounded-full text-sm bg-green-100 text-green-800">
+                                    <div class="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
+                                    Disponible
+                                </span>
+                            </div>
+                            <p class="text-gray-600 mb-4">Imagerie médicale : IRM, scanner, échographie et radiographie
+                            </p>
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm text-gray-500">Dr. Isabelle Garnier • Dr. Luc Roux</span>
+                                <button
+                                    class="text-primary hover:text-primary/80 font-medium whitespace-nowrap !rounded-button">
+                                    Voir les créneaux
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-shadow">
+                        <div class="h-48 bg-cover bg-center"
+                            style="background-image: url('https://readdy.ai/api/search-image?query=Emergency%20department%20with%20medical%20staff%20in%20action%2C%20ambulances%20and%20emergency%20equipment%2C%20urgent%20care%20medical%20environment%20with%20red%20and%20white%20colors&width=400&height=300&seq=urgence001&orientation=landscape');">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-3">
+                                <h3 class="text-xl font-semibold text-gray-900">Urgences</h3>
+                                <span
+                                    class="inline-flex items-center px-3 py-1 rounded-full text-sm bg-green-100 text-green-800">
+                                    <div class="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
+                                    24h/24
+                                </span>
+                            </div>
+                            <p class="text-gray-600 mb-4">Service d'urgences ouvert 24h/24 avec équipe médicale dédiée
+                            </p>
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm text-gray-500">Équipe d'urgentistes</span>
+                                <button
+                                    class="text-primary hover:text-primary/80 font-medium whitespace-nowrap !rounded-button">
+                                    Accès direct
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="rendez-vous" class="py-20 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold text-gray-900 mb-4">Prendre Rendez-vous</h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                        Simplifiez vos démarches médicales en prenant rendez-vous en ligne
+                    </p>
+                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <div class="bg-white rounded-2xl shadow-lg p-8 text-center">
+                        <div class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <div class="w-8 h-8 flex items-center justify-center">
+                                <i class="ri-calendar-line text-white text-xl"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-4">Rendez-vous en ligne</h3>
+                        <p class="text-gray-600 mb-6">Prenez rendez-vous 24h/24 et 7j/7 selon vos disponibilités</p>
+                        <button
+                            class="bg-primary text-white px-6 py-3 rounded-button hover:bg-primary/90 transition-colors font-semibold whitespace-nowrap !rounded-button">
+                            Réserver maintenant
+                        </button>
+                    </div>
+                    <div class="bg-white rounded-2xl shadow-lg p-8 text-center">
+                        <div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <div class="w-8 h-8 flex items-center justify-center">
+                                <i class="ri-phone-line text-white text-xl"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-4">Par téléphone</h3>
+                        <p class="text-gray-600 mb-6">Notre équipe est à votre écoute du lundi au vendredi de 8h à 20h
+                        </p>
+                        <p class="text-2xl font-semibold text-primary">01 42 34 56 78</p>
+                    </div>
+                    <div class="bg-white rounded-2xl shadow-lg p-8 text-center">
+                        <div class="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <div class="w-8 h-8 flex items-center justify-center">
+                                <i class="ri-hospital-line text-white text-xl"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-4">Sur place</h3>
+                        <p class="text-gray-600 mb-6">Rendez-vous directement à l'accueil de l'hôpital</p>
+                        <p class="text-sm text-gray-500">123 Avenue de la Santé<br>75014 Paris</p>
+                    </div>
+                </div>
+                <div class="mt-16 bg-white rounded-2xl shadow-lg overflow-hidden">
+                    <div class="grid grid-cols-1 lg:grid-cols-3">
+                        <div class="p-8 bg-primary text-white">
+                            <h3 class="text-2xl font-semibold mb-4">Horaires d'ouverture</h3>
+                            <div class="space-y-3">
+                                <div class="flex justify-between">
+                                    <span>Lundi - Vendredi</span>
+                                    <span>8h - 20h</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span>Samedi</span>
+                                    <span>9h - 18h</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span>Dimanche</span>
+                                    <span>Fermé*</span>
+                                </div>
+                                <p class="text-sm mt-4">*Urgences ouvertes 24h/24</p>
+                            </div>
+                        </div>
+                        <div class="col-span-2 p-8">
+                            <h3 class="text-2xl font-semibold text-gray-900 mb-4">Informations importantes</h3>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div class="flex items-start">
+                                    <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
+                                        <div class="w-6 h-6 flex items-center justify-center">
+                                            <i class="ri-file-list-line text-blue-600"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium text-gray-900 mb-1">Documents nécessaires</h4>
+                                        <p class="text-sm text-gray-600">Carte vitale, pièce d'identité et ordonnance si
+                                            nécessaire</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <div
+                                        class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center mr-4">
+                                        <div class="w-6 h-6 flex items-center justify-center">
+                                            <i class="ri-time-line text-green-600"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium text-gray-900 mb-1">Délai d'attente moyen</h4>
+                                        <p class="text-sm text-gray-600">15-20 minutes pour les consultations
+                                            programmées</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <div
+                                        class="w-10 h-10 bg-yellow-100 rounded-lg flex items-center justify-center mr-4">
+                                        <div class="w-6 h-6 flex items-center justify-center">
+                                            <i class="ri-parking-line text-yellow-600"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium text-gray-900 mb-1">Parking</h4>
+                                        <p class="text-sm text-gray-600">Parking gratuit pour les patients sur
+                                            présentation du ticket</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <div
+                                        class="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center mr-4">
+                                        <div class="w-6 h-6 flex items-center justify-center">
+                                            <i class="ri-bus-line text-purple-600"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium text-gray-900 mb-1">Accès</h4>
+                                        <p class="text-sm text-gray-600">Métro ligne 13, Bus 58 et 95, arrêt "Hôpital"
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold text-gray-900 mb-4">Espace Personnel Patient</h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                        Accédez à vos documents médicaux, gérez vos paiements et suivez votre dossier de santé
+                    </p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+                    <div
+                        class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-6 text-center hover:shadow-lg transition-shadow">
+                        <div class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <div class="w-8 h-8 flex items-center justify-center">
+                                <i class="ri-file-text-line text-white text-xl"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2">Dossier Médical</h3>
+                        <p class="text-gray-600 text-sm mb-4">Consultez et téléchargez vos documents</p>
+                        <button class="text-blue-600 hover:text-blue-700 font-medium whitespace-nowrap !rounded-button">
+                            Accéder
+                        </button>
+                    </div>
+                    <div
+                        class="bg-gradient-to-br from-green-50 to-green-100 rounded-2xl p-6 text-center hover:shadow-lg transition-shadow">
+                        <div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <div class="w-8 h-8 flex items-center justify-center">
+                                <i class="ri-bank-card-line text-white text-xl"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2">Paiements</h3>
+                        <p class="text-gray-600 text-sm mb-4">Réglez vos consultations en ligne</p>
+                        <button
+                            class="text-green-600 hover:text-green-700 font-medium whitespace-nowrap !rounded-button">
+                            Payer
+                        </button>
+                    </div>
+                    <div
+                        class="bg-gradient-to-br from-purple-50 to-purple-100 rounded-2xl p-6 text-center hover:shadow-lg transition-shadow">
+                        <div class="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <div class="w-8 h-8 flex items-center justify-center">
+                                <i class="ri-download-line text-white text-xl"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2">Tickets</h3>
+                        <p class="text-gray-600 text-sm mb-4">Téléchargez vos justificatifs</p>
+                        <button
+                            class="text-purple-600 hover:text-purple-700 font-medium whitespace-nowrap !rounded-button">
+                            Télécharger
+                        </button>
+                    </div>
+                    <div
+                        class="bg-gradient-to-br from-orange-50 to-orange-100 rounded-2xl p-6 text-center hover:shadow-lg transition-shadow">
+                        <div class="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <div class="w-8 h-8 flex items-center justify-center">
+                                <i class="ri-history-line text-white text-xl"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2">Historique</h3>
+                        <p class="text-gray-600 text-sm mb-4">Consultez vos antécédents</p>
+                        <button
+                            class="text-orange-600 hover:text-orange-700 font-medium whitespace-nowrap !rounded-button">
+                            Voir
+                        </button>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <div class="bg-white rounded-2xl shadow-lg border border-gray-100 p-8">
+                        <h3 class="text-2xl font-semibold text-gray-900 mb-6">Documents Médicaux</h3>
+                        <div class="space-y-4">
+                            <div
+                                class="flex items-center justify-between p-4 border border-gray-100 rounded-lg hover:bg-gray-50 transition-colors">
+                                <div class="flex items-center">
+                                    <div class="w-10 h-10 bg-red-100 rounded-lg flex items-center justify-center mr-4">
+                                        <div class="w-6 h-6 flex items-center justify-center">
+                                            <i class="ri-file-pdf-line text-red-600"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <p class="font-medium text-gray-900">Résultats ECG</p>
+                                        <p class="text-sm text-gray-500">25 août 2024 • Dr. Marie Dubois</p>
+                                    </div>
+                                </div>
+                                <button class="text-primary hover:text-primary/80 whitespace-nowrap !rounded-button">
+                                    <div class="w-6 h-6 flex items-center justify-center">
+                                        <i class="ri-download-line"></i>
+                                    </div>
+                                </button>
+                            </div>
+                            <div
+                                class="flex items-center justify-between p-4 border border-gray-100 rounded-lg hover:bg-gray-50 transition-colors">
+                                <div class="flex items-center">
+                                    <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
+                                        <div class="w-6 h-6 flex items-center justify-center">
+                                            <i class="ri-file-text-line text-blue-600"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <p class="font-medium text-gray-900">Ordonnance</p>
+                                        <p class="text-sm text-gray-500">20 août 2024 • Dr. Jean Martin</p>
+                                    </div>
+                                </div>
+                                <button class="text-primary hover:text-primary/80 whitespace-nowrap !rounded-button">
+                                    <div class="w-6 h-6 flex items-center justify-center">
+                                        <i class="ri-download-line"></i>
+                                    </div>
+                                </button>
+                            </div>
+                            <div
+                                class="flex items-center justify-between p-4 border border-gray-100 rounded-lg hover:bg-gray-50 transition-colors">
+                                <div class="flex items-center">
+                                    <div
+                                        class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center mr-4">
+                                        <div class="w-6 h-6 flex items-center justify-center">
+                                            <i class="ri-image-line text-green-600"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <p class="font-medium text-gray-900">IRM Cardiaque</p>
+                                        <p class="text-sm text-gray-500">15 août 2024 • Dr. Isabelle Garnier</p>
+                                    </div>
+                                </div>
+                                <button class="text-primary hover:text-primary/80 whitespace-nowrap !rounded-button">
+                                    <div class="w-6 h-6 flex items-center justify-center">
+                                        <i class="ri-download-line"></i>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                        <button
+                            class="w-full mt-6 bg-gray-100 text-gray-700 py-3 rounded-button hover:bg-gray-200 transition-colors font-medium whitespace-nowrap !rounded-button">
+                            Voir tous les documents
+                        </button>
+                    </div>
+                    <div class="bg-white rounded-2xl shadow-lg border border-gray-100 p-8">
+                        <h3 class="text-2xl font-semibold text-gray-900 mb-6">Paiement Sécurisé</h3>
+                        <div class="mb-6">
+                            <div class="flex items-center justify-between p-4 bg-gray-50 rounded-lg mb-4">
+                                <div>
+                                    <p class="font-medium text-gray-900">Consultation Cardiologie</p>
+                                    <p class="text-sm text-gray-500">Dr. Marie Dubois • 27 août 2024</p>
+                                </div>
+                                <span class="font-semibold text-gray-900">85 €</span>
+                            </div>
+                            <div class="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+                                <div>
+                                    <p class="font-medium text-gray-900">Examens complémentaires</p>
+                                    <p class="text-sm text-gray-500">ECG + Échographie</p>
+                                </div>
+                                <span class="font-semibold text-gray-900">120 €</span>
+                            </div>
+                        </div>
+                        <div class="border-t border-gray-200 pt-4 mb-6">
+                            <div class="flex items-center justify-between">
+                                <span class="text-lg font-semibold text-gray-900">Total à payer</span>
+                                <span class="text-2xl font-bold text-primary">205 €</span>
+                            </div>
+                        </div>
+                        <div class="space-y-4 mb-6">
+                            <div class="flex space-x-4">
+                                <button
+                                    class="flex-1 p-4 border-2 border-primary bg-primary/5 rounded-lg flex items-center justify-center whitespace-nowrap !rounded-button">
+                                    <div class="w-6 h-6 flex items-center justify-center mr-2">
+                                        <i class="ri-bank-card-line text-primary"></i>
+                                    </div>
+                                    <span class="font-medium text-primary">Carte bancaire</span>
+                                </button>
+                                <button
+                                    class="flex-1 p-4 border border-gray-200 rounded-lg flex items-center justify-center hover:bg-gray-50 transition-colors whitespace-nowrap !rounded-button">
+                                    <div class="w-6 h-6 flex items-center justify-center mr-2">
+                                        <i class="ri-paypal-fill text-blue-600"></i>
+                                    </div>
+                                    <span class="font-medium text-gray-700">PayPal</span>
+                                </button>
+                            </div>
+                        </div>
+                        <button
+                            class="w-full bg-primary text-white py-4 rounded-button hover:bg-primary/90 transition-colors font-semibold whitespace-nowrap !rounded-button">
+                            Procéder au paiement
+                        </button>
+                        <div class="flex items-center justify-center mt-4 text-sm text-gray-500">
+                            <div class="w-4 h-4 flex items-center justify-center mr-2">
+                                <i class="ri-shield-check-line text-green-500"></i>
+                            </div>
+                            Paiement sécurisé SSL
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer id="contact" class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <h3 class="text-xl font-semibold mb-6">Hôpital Saint-Michel</h3>
+                    <p class="text-gray-300 mb-4">
+                        Excellence médicale et soins personnalisés depuis 1985
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#"
+                            class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-700 transition-colors">
+                            <div class="w-5 h-5 flex items-center justify-center">
+                                <i class="ri-facebook-fill text-blue-500"></i>
+                            </div>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-700 transition-colors">
+                            <div class="w-5 h-5 flex items-center justify-center">
+                                <i class="ri-twitter-fill text-blue-400"></i>
+                            </div>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-700 transition-colors">
+                            <div class="w-5 h-5 flex items-center justify-center">
+                                <i class="ri-linkedin-fill text-blue-600"></i>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Contact</h4>
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <div class="w-5 h-5 flex items-center justify-center mr-3">
+                                <i class="ri-map-pin-line text-gray-400"></i>
+                            </div>
+                            <span class="text-gray-300">123 Avenue de la Santé, 75014 Paris</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-5 h-5 flex items-center justify-center mr-3">
+                                <i class="ri-phone-line text-gray-400"></i>
+                            </div>
+                            <span class="text-gray-300">01 42 34 56 78</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-5 h-5 flex items-center justify-center mr-3">
+                                <i class="ri-mail-line text-gray-400"></i>
+                            </div>
+                            <span class="text-gray-300">contact@hopital-saint-michel.fr</span>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Services</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Consultations</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Urgences 24h/24</a>
+                        </li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Chirurgie</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Imagerie médicale</a>
+                        </li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Laboratoire</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Urgences</h4>
+                    <div class="space-y-4">
+                        <div class="p-4 bg-red-600 rounded-lg">
+                            <div class="flex items-center mb-2">
+                                <div class="w-5 h-5 flex items-center justify-center mr-2">
+                                    <i class="ri-phone-fill text-white"></i>
+                                </div>
+                                <span class="font-semibold">SAMU : 15</span>
+                            </div>
+                            <p class="text-sm text-red-100">Urgences vitales</p>
+                        </div>
+                        <div class="p-4 bg-blue-600 rounded-lg">
+                            <div class="flex items-center mb-2">
+                                <div class="w-5 h-5 flex items-center justify-center mr-2">
+                                    <i class="ri-hospital-line text-white"></i>
+                                </div>
+                                <span class="font-semibold">Urgences : 01 42 34 56 99</span>
+                            </div>
+                            <p class="text-sm text-blue-100">Service d'urgences</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8">
+                <div class="flex flex-col md:flex-row items-center justify-between">
+                    <p class="text-gray-400 text-sm">
+                        © 2024 Hôpital Saint-Michel. Tous droits réservés.
+                    </p>
+                    <div class="flex space-x-6 mt-4 md:mt-0">
+                        <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Mentions
+                            légales</a>
+                        <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Politique de
+                            confidentialité</a>
+                        <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">CGU</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script id="filter-functionality">
+        document.addEventListener('DOMContentLoaded', function () {
+            const filterButtons = document.querySelectorAll('[data-filter]');
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    filterButtons.forEach(btn => {
+                        btn.classList.remove('bg-primary', 'text-white');
+                        btn.classList.add('text-gray-600', 'hover:bg-white');
+                    });
+                    this.classList.add('bg-primary', 'text-white');
+                    this.classList.remove('text-gray-600', 'hover:bg-white');
+                });
+            });
+        });
+    </script>
+    <script id="notification-system">
+        document.addEventListener('DOMContentLoaded', function () {
+            function showNotification(type, title, message) {
+                const notification = document.createElement('div');
+                notification.className = `fixed top-4 right-4 p-4 rounded-lg shadow-lg z-50 max-w-sm transform translate-x-full transition-transform duration-300`;
+                if (type === 'warning') {
+                    notification.classList.add('bg-yellow-100', 'border-l-4', 'border-yellow-400');
+                } else if (type === 'info') {
+                    notification.classList.add('bg-blue-100', 'border-l-4', 'border-blue-400');
+                }
+                notification.innerHTML = `
+<div class="flex items-start">
+<div class="w-6 h-6 flex items-center justify-center mr-3">
+<i class="ri-${type === 'warning' ? 'alert' : 'information'}-line text-${type === 'warning' ? 'yellow' : 'blue'}-500"></i>
+</div>
+<div>
+<p class="font-medium text-${type === 'warning' ? 'yellow' : 'blue'}-800">${title}</p>
+<p class="text-sm text-${type === 'warning' ? 'yellow' : 'blue'}-600">${message}</p>
+</div>
+<button class="ml-4 text-gray-400 hover:text-gray-600" onclick="this.parentElement.parentElement.remove()">
+<i class="ri-close-line"></i>
+</button>
+</div>
+`;
+                document.body.appendChild(notification);
+                setTimeout(() => {
+                    notification.classList.remove('translate-x-full');
+                }, 100);
+                setTimeout(() => {
+                    notification.classList.add('translate-x-full');
+                    setTimeout(() => notification.remove(), 300);
+                }, 5000);
+            }
+            setTimeout(() => {
+                showNotification('warning', 'Médecin absent', 'Dr. Michel Bernard sera absent demain. Vos rendez-vous ont été reportés.');
+            }, 2000);
+        });
+    </script>
+    <script id="appointment-booking">
+        document.addEventListener('DOMContentLoaded', function () {
+            const timeSlots = document.querySelectorAll('[data-time]');
+            let selectedSlot = null;
+            document.querySelectorAll('.grid .p-3').forEach(slot => {
+                slot.addEventListener('click', function () {
+                    if (selectedSlot) {
+                        selectedSlot.classList.remove('border-primary', 'bg-primary/10');
+                        selectedSlot.classList.add('border-gray-200');
+                    }
+                    selectedSlot = this;
+                    this.classList.remove('border-gray-200');
+                    this.classList.add('border-primary', 'bg-primary/10');
+                });
+            });
+        });
+    </script>
+    <script id="services-page" type="text/html"></body>
+
+</html> -->
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <script src="https://static.readdy.ai/static/e.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services Médicaux - Hôpital Saint-Michel</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config = { theme: { extend: { colors: { primary: '#2563eb', secondary: '#059669' }, borderRadius: { 'none': '0px', 'sm': '4px', DEFAULT: '8px', 'md': '12px', 'lg': '16px', 'xl': '20px', '2xl': '24px', '3xl': '32px', 'full': '9999px', 'button': '8px' } } } }</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" href="LOGO.png">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <style>
+        :where([class^="ri-"])::before {
+            content: "\f3c2";
+        }
+
+        .hero {
+            z-index: -99;
+        }
+
+        .notif {
+            z-index: 1000;
+        }
+
+        @media screen and (max-width: 500px) {
+            #notif-popup {
+                right: -2rem !important;
+                width: 250px;
+            }
+
+            .items-center i {
+                font-size: 22px;
+            }
+        }
+
+        @media screen and (max-width: 500px) {
+            #notif-popup {
+                right: -3.5rem !important;
+                width: 250px;
+            }
+        }
+
+        @media screen and (max-width: 767px) {
+            .sociaux {
+                display: none !important;
+            }
+        }
+
+        header {
+            z-index: 99;
+        }
+
+        .LOGO {
+            width: 170px;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+
+    <header class="sticky top-0 bg-white shadow-sm border-b border-gray-100">
+        <div class="w-full px-6 py-2">
+            <div class="flex items-center justify-between">
+                <!-- Logo + Navigation -->
+                <div class="flex items-center space-x-8">
+                    <img src="LOGO.png" alt="" class="LOGO">
+                    <!-- Navigation desktop -->
+                    <nav id="menu" class="hidden md:flex space-x-8">
+                       <a href="./index.html" class="text-gray-700 hover:text-primary transition-colors " >Accueil</a>
+                        <a href="#" class="text-gray-700 hover:text-primary transition-colors text-primary">Services</a>
+                        <a href="./rendez-vous.html"
+                            class="text-gray-700 hover:text-primary transition-colors">Rendez-vous</a>
+                        <a href="./urgence.html" class="text-gray-700 hover:text-primary transition-colors">Urgences</a>
+                        <a href="./contact.html" class="text-gray-700 hover:text-primary transition-colors">Contact</a> 
+
+                    </nav>
+                </div>
+
+                <!-- Actions -->
+                <div class="flex items-center space-x-4">
+                    <!-- Réseaux sociaux -->
+                    <div class="flex items-center space-x-3 sociaux">
+                        <a href="https://wa.me/1234567890" target="_blank"
+                            class="w-8 h-8 flex items-center justify-center rounded-full bg-green-100 text-green-500 hover:bg-green-500 hover:text-white shadow-sm hover:shadow-lg transform hover:-translate-y-1 transition-all duration-200 text-2xl">
+                            <i class="ri-whatsapp-line"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/tonprofil" target="_blank"
+                            class="w-8 h-8 flex items-center justify-center rounded-full bg-blue-100 text-blue-600 hover:bg-blue-600 hover:text-white shadow-sm hover:shadow-lg transform hover:-translate-y-1 transition-all duration-200 text-2xl">
+                            <i class="ri-linkedin-line"></i>
+                        </a>
+                        <a href="https://www.instagram.com/tonprofil" target="_blank"
+                            class="w-8 h-8 flex items-center justify-center rounded-full bg-pink-100 text-pink-500 hover:bg-pink-500 hover:text-white shadow-sm hover:shadow-lg transform hover:-translate-y-1 transition-all duration-200 text-2xl">
+                            <i class="ri-instagram-line"></i>
+                        </a>
+                    </div>
+
+                    <!-- Notifications -->
+                    <div class="relative">
+                        <button id="notif-btn"
+                            class="text-gray-700 hover:text-primary text-2xl focus:outline-none relative">
+                            <i class="ri-notification-3-line"></i>
+                            <!-- Badge rouge -->
+                            <span id="notif-badge"
+                                class="absolute top-0 right-0 inline-block w-3 h-3 bg-red-500 rounded-full ring-2 ring-white"></span>
+                        </button>
+
+                        <!-- Popup notifications -->
+                        <div id="notif-popup"
+                            class="hidden absolute right-0 mt-2 w-80 bg-white shadow-lg rounded-lg p-4 border border-gray-200 z-50">
+                            <h3 class="font-semibold text-gray-800 mb-2">Notifications récentes</h3>
+                            <ul class="space-y-2 text-sm text-gray-600">
+                                <li class="p-2 rounded hover:bg-gray-50">⚠️ Dr. Michel Bernard sera absent demain.</li>
+                                <li class="p-2 rounded hover:bg-gray-50">ℹ️ Nouveau service de téléconsultation
+                                    disponible.</li>
+                                <li class="p-2 rounded hover:bg-gray-50">✅ Paiement par carte bancaire désormais
+                                    accepté.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Bouton menu hamburger (mobile) -->
+                    <button id="menu-btn" class="md:hidden text-3xl text-gray-700 focus:outline-none">
+                        ☰
+                    </button>
+                </div>
+            </div>
+
+            <!-- Menu mobile -->
+            <div id="mobile-menu" class="hidden flex-col space-y-4 mt-4 md:hidden">
+                <a href="#" class="text-gray-700 hover:text-primary transition-colors">Accueil</a>
+                <hr><br>
+                <a href="#services" class="text-gray-700 hover:text-primary transition-colors">Services</a>
+                <hr><br>
+                <a href="#rendez-vous" class="text-gray-700 hover:text-primary transition-colors">Rendez-vous</a>
+                <hr><br>
+                <a href="#urgences" class="text-gray-700 hover:text-primary transition-colors">Urgences</a>
+                <hr><br>
+                <a href="#contact" class="text-gray-700 hover:text-primary transition-colors">Contact</a>
+                <hr>
+
+                <div class="flex items-center space-x-3 ">
+                    <a href="https://wa.me/1234567890" target="_blank"
+                        class="w-8 h-8 flex items-center justify-center rounded-full bg-green-100 text-green-500 hover:bg-green-500 hover:text-white shadow-sm hover:shadow-lg transform hover:-translate-y-1 transition-all duration-200 text-2xl">
+                        <i class="ri-whatsapp-line"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/tonprofil" target="_blank"
+                        class="w-8 h-8 flex items-center justify-center rounded-full bg-blue-100 text-blue-600 hover:bg-blue-600 hover:text-white shadow-sm hover:shadow-lg transform hover:-translate-y-1 transition-all duration-200 text-2xl">
+                        <i class="ri-linkedin-line"></i>
+                    </a>
+                    <a href="https://www.instagram.com/tonprofil" target="_blank"
+                        class="w-8 h-8 flex items-center justify-center rounded-full bg-pink-100 text-pink-500 hover:bg-pink-500 hover:text-white shadow-sm hover:shadow-lg transform hover:-translate-y-1 transition-all duration-200 text-2xl">
+                        <i class="ri-instagram-line"></i>
+                    </a>
+                    <hr>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Menu mobile
+            const menuBtn = document.getElementById("menu-btn");
+            const mobileMenu = document.getElementById("mobile-menu");
+            menuBtn.addEventListener("click", () => {
+                mobileMenu.classList.toggle("hidden");
+            });
+
+            // Notifications popup
+            const notifBtn = document.getElementById("notif-btn");
+            const notifPopup = document.getElementById("notif-popup");
+
+            notifBtn.addEventListener("click", (e) => {
+                e.stopPropagation(); // empêche la fermeture immédiate
+                notifPopup.classList.toggle("hidden");
+            });
+
+            // Fermer popup si clic en dehors
+            document.addEventListener("click", (e) => {
+                if (!notifBtn.contains(e.target) && !notifPopup.contains(e.target)) {
+                    notifPopup.classList.add("hidden");
+                }
+            });
+        });
+    </script>
+
+    <main>
+        <section class="relative py-20 hero"
+            style="background-image: url('https://readdy.ai/api/search-image?query=Modern%20hospital%20interior%20with%20advanced%20medical%20equipment%2C%20bright%20and%20clean%20environment%20with%20natural%20lighting%2C%20professional%20healthcare%20setting%20with%20blue%20and%20white%20color%20scheme&width=1920&height=600&seq=services001&orientation=landscape'); background-size: cover; background-position: center;">
+            <div class="absolute inset-0 bg-gradient-to-r from-white/95 via-white/80 to-transparent"></div>
+            <div class="relative max-w-7xl mx-auto px-6">
+                <div class="max-w-2xl">
+                    <h1 class="text-5xl font-bold text-gray-900 mb-6">Services Médicaux</h1>
+                    <p class="text-xl text-gray-600">
+                        Des soins d'excellence avec des équipements de pointe et une équipe médicale expérimentée
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                        <div class="h-48 bg-cover bg-center"
+                            style="background-image: url('https://readdy.ai/api/search-image?query=Modern%20cardiology%20department%20with%20advanced%20heart%20monitoring%20equipment%2C%20clean%20medical%20environment%20with%20professional%20staff%2C%20high-tech%20cardiac%20care&width=400&height=300&seq=card002&orientation=landscape');">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-900 mb-4">Cardiologie</h3>
+                            <p class="text-gray-600 mb-6">Notre service de cardiologie offre des soins complets pour
+                                le diagnostic et le traitement des maladies cardiovasculaires.</p>
+                            <div class="space-y-3">
+                                <div class="flex items-center text-sm text-gray-600">
+                                    <div class="w-5 h-5 flex items-center justify-center mr-3">
+                                        <i class="ri-stethoscope-line text-primary"></i>
+                                    </div>
+                                    Consultations spécialisées
+                                </div>
+                                <div class="flex items-center text-sm text-gray-600">
+                                    <div class="w-5 h-5 flex items-center justify-center mr-3">
+                                        <i class="ri-heart-pulse-line text-primary"></i>
+                                    </div>
+                                    Électrocardiogramme (ECG)
+                                </div>
+                                <div class="flex items-center text-sm text-gray-600">
+                                    <div class="w-5 h-5 flex items-center justify-center mr-3">
+                                        <i class="ri-pulse-line text-primary"></i>
+                                    </div>
+                                    Test d'effort
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                        <div class="h-48 bg-cover bg-center"
+                            style="background-image: url('https://readdy.ai/api/search-image?query=Modern%20pediatric%20care%20unit%20with%20colorful%20decor%20and%20child-friendly%20medical%20equipment%2C%20warm%20and%20welcoming%20environment%20for%20young%20patients&width=400&height=300&seq=ped002&orientation=landscape');">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-900 mb-4">Pédiatrie</h3>
+                            <p class="text-gray-600 mb-6">Une équipe dédiée aux soins des enfants dans un
+                                environnement adapté et rassurant.</p>
+                            <div class="space-y-3">
+                                <div class="flex items-center text-sm text-gray-600">
+                                    <div class="w-5 h-5 flex items-center justify-center mr-3">
+                                        <i class="ri-mental-health-line text-primary"></i>
+                                    </div>
+                                    Suivi de croissance
+                                </div>
+                                <div class="flex items-center text-sm text-gray-600">
+                                    <div class="w-5 h-5 flex items-center justify-center mr-3">
+                                        <i class="ri-medicine-bottle-line text-primary"></i>
+                                    </div>
+                                    Vaccinations
+                                </div>
+                                <div class="flex items-center text-sm text-gray-600">
+                                    <div class="w-5 h-5 flex items-center justify-center mr-3">
+                                        <i class="ri-psychotherapy-line text-primary"></i>
+                                    </div>
+                                    Urgences pédiatriques
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                        <div class="h-48 bg-cover bg-center"
+                            style="background-image: url('https://readdy.ai/api/search-image?query=Modern%20orthopedic%20surgery%20room%20with%20advanced%20equipment%20and%20surgical%20tools%2C%20sterile%20medical%20environment%20with%20professional%20lighting&width=400&height=300&seq=ortho002&orientation=landscape');">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-900 mb-4">Orthopédie</h3>
+                            <p class="text-gray-600 mb-6">Traitement des pathologies de l'appareil locomoteur avec
+                                des techniques innovantes.</p>
+                            <div class="space-y-3">
+                                <div class="flex items-center text-sm text-gray-600">
+                                    <div class="w-5 h-5 flex items-center justify-center mr-3">
+                                        <i class="ri-bone-line text-primary"></i>
+                                    </div>
+                                    Chirurgie orthopédique
+                                </div>
+                                <div class="flex items-center text-sm text-gray-600">
+                                    <div class="w-5 h-5 flex items-center justify-center mr-3">
+                                        <i class="ri-health-book-line text-primary"></i>
+                                    </div>
+                                    Rééducation
+                                </div>
+                                <div class="flex items-center text-sm text-gray-600">
+                                    <div class="w-5 h-5 flex items-center justify-center mr-3">
+                                        <i class="ri-microscope-line text-primary"></i>
+                                    </div>
+                                    Arthroscopie
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                        <div class="h-48 bg-cover bg-center"
+                            style="background-image: url('https://readdy.ai/api/search-image?query=Modern%20neurology%20department%20with%20brain%20scanning%20equipment%20and%20neurological%20testing%20devices%2C%20advanced%20medical%20technology%20in%20clean%20environment&width=400&height=300&seq=neuro002&orientation=landscape');">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-900 mb-4">Neurologie</h3>
+                            <p class="text-gray-600 mb-6">Expertise dans le diagnostic et le traitement des maladies
+                                du système nerveux.</p>
+                            <div class="space-y-3">
+                                <div class="flex items-center text-sm text-gray-600">
+                                    <div class="w-5 h-5 flex items-center justify-center mr-3">
+                                        <i class="ri-brain-line text-primary"></i>
+                                    </div>
+                                    Électroencéphalogramme
+                                </div>
+                                <div class="flex items-center text-sm text-gray-600">
+                                    <div class="w-5 h-5 flex items-center justify-center mr-3">
+                                        <i class="ri-empathize-line text-primary"></i>
+                                    </div>
+                                    Tests neurologiques
+                                </div>
+                                <div class="flex items-center text-sm text-gray-600">
+                                    <div class="w-5 h-5 flex items-center justify-center mr-3">
+                                        <i class="ri-psychotherapy-line text-primary"></i>
+                                    </div>
+                                    Suivi Alzheimer
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                        <div class="h-48 bg-cover bg-center"
+                            style="background-image: url('https://readdy.ai/api/search-image?query=Modern%20radiology%20department%20with%20MRI%20and%20CT%20scan%20machines%2C%20advanced%20medical%20imaging%20technology%20in%20professional%20healthcare%20setting&width=400&height=300&seq=radio002&orientation=landscape');">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-900 mb-4">Imagerie Médicale</h3>
+                            <p class="text-gray-600 mb-6">Équipements d'imagerie de dernière génération pour des
+                                diagnostics précis.</p>
+                            <div class="space-y-3">
+                                <div class="flex items-center text-sm text-gray-600">
+                                    <div class="w-5 h-5 flex items-center justify-center mr-3">
+                                        <i class="ri-scan-2-line text-primary"></i>
+                                    </div>
+                                    IRM
+                                </div>
+                                <div class="flex items-center text-sm text-gray-600">
+                                    <div class="w-5 h-5 flex items-center justify-center mr-3">
+                                        <i class="ri-camera-line text-primary"></i>
+                                    </div>
+                                    Scanner
+                                </div>
+                                <div class="flex items-center text-sm text-gray-600">
+                                    <div class="w-5 h-5 flex items-center justify-center mr-3">
+                                        <i class="ri-heart-2-line text-primary"></i>
+                                    </div>
+                                    Échographie
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                        <div class="h-48 bg-cover bg-center"
+                            style="background-image: url('https://readdy.ai/api/search-image?query=Modern%20emergency%20department%20with%20trauma%20care%20equipment%20and%20ambulance%20access%2C%20urgent%20medical%20care%20setting%20with%20professional%20staff&width=400&height=300&seq=emerg002&orientation=landscape');">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-900 mb-4">Urgences</h3>
+                            <p class="text-gray-600 mb-6">Service d'urgences disponible 24h/24 avec une équipe
+                                médicale expérimentée.</p>
+                            <div class="space-y-3">
+                                <div class="flex items-center text-sm text-gray-600">
+                                    <div class="w-5 h-5 flex items-center justify-center mr-3">
+                                        <i class="ri-first-aid-kit-line text-primary"></i>
+                                    </div>
+                                    Traumatologie
+                                </div>
+                                <div class="flex items-center text-sm text-gray-600">
+                                    <div class="w-5 h-5 flex items-center justify-center mr-3">
+                                        <i class="ri-heart-add-line text-primary"></i>
+                                    </div>
+                                    Réanimation
+                                </div>
+                                <div class="flex items-center text-sm text-gray-600">
+                                    <div class="w-5 h-5 flex items-center justify-center mr-3">
+                                        <i class="ri-ambulance-line text-primary"></i>
+                                    </div>
+                                    SAMU
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h2 class="text-3xl font-bold text-gray-900 mb-6">Équipements Médicaux de Pointe</h2>
+                        <p class="text-gray-600 mb-8">
+                            Notre hôpital est équipé des technologies médicales les plus avancées pour garantir des
+                            diagnostics précis et des traitements efficaces.
+                        </p>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
+                                    <div class="w-6 h-6 flex items-center justify-center">
+                                        <i class="ri-microscope-line text-blue-600"></i>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-900 mb-1">Laboratoire d'Analyses</h4>
+                                    <p class="text-sm text-gray-600">Analyses médicales avec résultats rapides et
+                                        fiables</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center mr-4">
+                                    <div class="w-6 h-6 flex items-center justify-center">
+                                        <i class="ri-heart-2-line text-green-600"></i>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-900 mb-1">Bloc Opératoire</h4>
+                                    <p class="text-sm text-gray-600">Salles d'opération équipées des dernières
+                                        technologies</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center mr-4">
+                                    <div class="w-6 h-6 flex items-center justify-center">
+                                        <i class="ri-scan-2-line text-purple-600"></i>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-900 mb-1">Centre d'Imagerie</h4>
+                                    <p class="text-sm text-gray-600">IRM, scanner et radiologie interventionnelle
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative certif">
+                        <img src="https://readdy.ai/api/search-image?query=Modern%20hospital%20equipment%20room%20with%20advanced%20medical%20technology%2C%20clean%20and%20professional%20healthcare%20environment%20with%20blue%20accent%20lighting&width=600&height=400&seq=equip001&orientation=landscape"
+                            alt="Équipements médicaux" class="rounded-2xl shadow-lg">
+                        <div class="absolute -bottom-6 -right-6 bg-white rounded-xl shadow-lg p-4">
+                            <div class="flex items-center space-x-2">
+                                <div class="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center">
+                                    <div class="w-5 h-5 flex items-center justify-center">
+                                        <i class="ri-shield-check-line text-green-600"></i>
+                                    </div>
+                                </div>
+                                <div>
+                                    <p class="font-medium text-gray-900">Certifié ISO 9001</p>
+                                    <p class="text-sm text-gray-500">Qualité des soins</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4">Notre Équipe Médicale</h2>
+                    <p class="text-xl text-gray-600">
+                        Des professionnels de santé expérimentés à votre service
+                    </p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="bg-white rounded-2xl shadow-lg p-6 text-center">
+                        <div class="w-24 h-24 rounded-full bg-gray-200 mx-auto mb-4 overflow-hidden">
+                            <img src="https://readdy.ai/api/search-image?query=Professional%20female%20doctor%20portrait%20with%20stethoscope%2C%20confident%20and%20friendly%20expression%2C%20medical%20uniform%2C%20light%20background&width=200&height=200&seq=doc001&orientation=squarish"
+                                alt="Dr. Marie Dubois" class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-900">Dr. Marie Dubois</h3>
+                        <p class="text-sm text-gray-500 mb-4">Cardiologue</p>
+                        <div class="flex justify-center space-x-2">
+                            <div class="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center">
+                                <div class="w-5 h-5 flex items-center justify-center">
+                                    <i class="ri-linkedin-fill text-blue-600"></i>
+                                </div>
+                            </div>
+                            <div class="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center">
+                                <div class="w-5 h-5 flex items-center justify-center">
+                                    <i class="ri-mail-line text-blue-600"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-2xl shadow-lg p-6 text-center">
+                        <div class="w-24 h-24 rounded-full bg-gray-200 mx-auto mb-4 overflow-hidden">
+                            <img src="https://readdy.ai/api/search-image?query=Professional%20male%20doctor%20portrait%20with%20glasses%2C%20experienced%20and%20trustworthy%20expression%2C%20medical%20uniform%2C%20light%20background&width=200&height=200&seq=doc002&orientation=squarish"
+                                alt="Dr. Jean Martin" class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-900">Dr. Jean Martin</h3>
+                        <p class="text-sm text-gray-500 mb-4">Neurologue</p>
+                        <div class="flex justify-center space-x-2">
+                            <div class="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center">
+                                <div class="w-5 h-5 flex items-center justify-center">
+                                    <i class="ri-linkedin-fill text-blue-600"></i>
+                                </div>
+                            </div>
+                            <div class="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center">
+                                <div class="w-5 h-5 flex items-center justify-center">
+                                    <i class="ri-mail-line text-blue-600"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-2xl shadow-lg p-6 text-center">
+                        <div class="w-24 h-24 rounded-full bg-gray-200 mx-auto mb-4 overflow-hidden">
+                            <img src="https://readdy.ai/api/search-image?query=Professional%20female%20pediatrician%20portrait%20with%20warm%20smile%2C%20caring%20and%20gentle%20expression%2C%20medical%20uniform%2C%20light%20background&width=200&height=200&seq=doc003&orientation=squarish"
+                                alt="Dr. Sophie Laurent" class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-900">Dr. Sophie Laurent</h3>
+                        <p class="text-sm text-gray-500 mb-4">Pédiatre</p>
+                        <div class="flex justify-center space-x-2">
+                            <div class="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center">
+                                <div class="w-5 h-5 flex items-center justify-center">
+                                    <i class="ri-linkedin-fill text-blue-600"></i>
+                                </div>
+                            </div>
+                            <div class="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center">
+                                <div class="w-5 h-5 flex items-center justify-center">
+                                    <i class="ri-mail-line text-blue-600"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-2xl shadow-lg p-6 text-center">
+                        <div class="w-24 h-24 rounded-full bg-gray-200 mx-auto mb-4 overflow-hidden">
+                            <img src="https://readdy.ai/api/search-image?query=Professional%20male%20surgeon%20portrait%20with%20surgical%20mask%2C%20confident%20and%20focused%20expression%2C%20medical%20uniform%2C%20light%20background&width=200&height=200&seq=doc004&orientation=squarish"
+                                alt="Dr. Pierre Moreau" class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-900">Dr. Pierre Moreau</h3>
+                        <p class="text-sm text-gray-500 mb-4">Chirurgien</p>
+                        <div class="flex justify-center space-x-2">
+                            <div class="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center">
+                                <div class="w-5 h-5 flex items-center justify-center">
+                                    <i class="ri-linkedin-fill text-blue-600"></i>
+                                </div>
+                            </div>
+                            <div class="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center">
+                                <div class="w-5 h-5 flex items-center justify-center">
+                                    <i class="ri-mail-line text-blue-600"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <h3 class="text-xl font-semibold mb-6">Hôpital Saint-Michel</h3>
+                    <p class="text-gray-300 mb-4">
+                        Excellence médicale et soins personnalisés depuis 1985
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#"
+                            class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-700 transition-colors">
+                            <div class="w-5 h-5 flex items-center justify-center">
+                                <i class="ri-facebook-fill text-blue-500"></i>
+                            </div>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-700 transition-colors">
+                            <div class="w-5 h-5 flex items-center justify-center">
+                                <i class="ri-twitter-fill text-blue-400"></i>
+                            </div>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-700 transition-colors">
+                            <div class="w-5 h-5 flex items-center justify-center">
+                                <i class="ri-linkedin-fill text-blue-600"></i>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Contact</h4>
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <div class="w-5 h-5 flex items-center justify-center mr-3">
+                                <i class="ri-map-pin-line text-gray-400"></i>
+                            </div>
+                            <span class="text-gray-300">123 Avenue de la Santé, 75014 Paris</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-5 h-5 flex items-center justify-center mr-3">
+                                <i class="ri-phone-line text-gray-400"></i>
+                            </div>
+                            <span class="text-gray-300">01 42 34 56 78</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-5 h-5 flex items-center justify-center mr-3">
+                                <i class="ri-mail-line text-gray-400"></i>
+                            </div>
+                            <span class="text-gray-300">contact@hopital-saint-michel.fr</span>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Services</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Consultations</a>
+                        </li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Urgences 24h/24</a>
+                        </li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Chirurgie</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Imagerie
+                                médicale</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Laboratoire</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Urgences</h4>
+                    <div class="space-y-4">
+                        <div class="p-4 bg-red-600 rounded-lg">
+                            <div class="flex items-center mb-2">
+                                <div class="w-5 h-5 flex items-center justify-center mr-2">
+                                    <i class="ri-phone-fill text-white"></i>
+                                </div>
+                                <span class="font-semibold">SAMU : 15</span>
+                            </div>
+                            <p class="text-sm text-red-100">Urgences vitales</p>
+                        </div>
+                        <div class="p-4 bg-blue-600 rounded-lg">
+                            <div class="flex items-center mb-2">
+                                <div class="w-5 h-5 flex items-center justify-center mr-2">
+                                    <i class="ri-hospital-line text-white"></i>
+                                </div>
+                                <span class="font-semibold">Urgences : 01 42 34 56 99</span>
+                            </div>
+                            <p class="text-sm text-blue-100">Service d'urgences</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8">
+                <div class="flex flex-col md:flex-row items-center justify-between">
+                    <p class="text-gray-400 text-sm">
+                        © 2024 Hôpital Saint-Michel. Tous droits réservés.
+                    </p>
+                    <div class="flex space-x-6 mt-4 md:mt-0">
+                        <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Mentions
+                            légales</a>
+                        <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Politique de
+                            confidentialité</a>
+                        <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">CGU</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <div id="notification-container" class="fixed top-4 right-4 space-y-4 z-50"></div>
+
+    <!-- Bouton flottant du chatbot -->
+<div id="chatbot-button"
+    class="fixed bottom-6 right-6 bg-primary text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg cursor-pointer hover:scale-110 transition-transform z-50">
+    <i class="ri-message-3-line text-2xl"></i>
+</div>
+
+<!-- Popup chatbot -->
+<div id="chatbot-popup"
+    class="hidden fixed bottom-20 right-6 w-80 bg-white rounded-lg shadow-lg border border-gray-200 z-50 flex flex-col">
+    <!-- Header -->
+    <div class="bg-primary text-white p-3 rounded-t-lg flex justify-between items-center">
+        <span class="font-semibold">Assistant Sama Santé</span>
+        <button id="chatbot-close" class="text-white hover:text-gray-200">
+            <i class="ri-close-line text-xl"></i>
+        </button>
+    </div>
+
+    <!-- Messages -->
+    <div id="chatbot-messages" class="p-4 space-y-3 h-64 overflow-y-auto text-sm text-gray-700">
+        <div class="bg-gray-100 p-2 rounded-lg w-max max-w-[75%]">👋 Bonjour ! Comment puis-je vous aider ?</div>
+    </div>
+
+    <!-- Zone de saisie -->
+    <form id="chatbot-form" class="p-3 border-t flex items-center space-x-2">
+        <input type="text" id="chatbot-input" placeholder="Écrivez votre message..."
+            class="flex-1 border rounded-lg px-3 py-2 focus:ring-2 focus:ring-primary outline-none text-sm">
+        <button type="submit" class="bg-primary text-white px-3 py-2 rounded-lg hover:bg-primary/90">
+            <i class="ri-send-plane-2-line"></i>
+        </button>
+    </form>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const chatBtn = document.getElementById("chatbot-button");
+        const chatPopup = document.getElementById("chatbot-popup");
+        const chatClose = document.getElementById("chatbot-close");
+        const chatForm = document.getElementById("chatbot-form");
+        const chatInput = document.getElementById("chatbot-input");
+        const chatMessages = document.getElementById("chatbot-messages");
+
+        // Ouvrir / fermer le chatbot
+        chatBtn.addEventListener("click", () => {
+            chatPopup.classList.toggle("hidden");
+        });
+        chatClose.addEventListener("click", () => {
+            chatPopup.classList.add("hidden");
+        });
+
+        // Gestion des messages
+        chatForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+            const userMsg = chatInput.value.trim();
+            if (userMsg === "") return;
+
+            // Afficher message utilisateur
+            const userDiv = document.createElement("div");
+            userDiv.className = "bg-primary text-white p-2 rounded-lg w-max max-w-[75%] ml-auto";
+            userDiv.textContent = userMsg;
+            chatMessages.appendChild(userDiv);
+
+            chatInput.value = "";
+
+            // Réponse simple du bot (exemple)
+            setTimeout(() => {
+                const botDiv = document.createElement("div");
+                botDiv.className = "bg-gray-100 p-2 rounded-lg w-max max-w-[75%]";
+                botDiv.textContent = "Merci pour votre message. Un agent vous répondra bientôt.";
+                chatMessages.appendChild(botDiv);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }, 800);
+
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        });
+    });
+</script>
+
+</body>
+
+</html>
+</script>
+
+<script src="https://static.readdy.ai/static/share.js"></script>

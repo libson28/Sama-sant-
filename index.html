@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+   <script src="https://static.readdy.ai/static/e.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services Médicaux - Hôpital Saint-Michel</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config = { theme: { extend: { colors: { primary: '#2563eb', secondary: '#059669' }, borderRadius: { 'none': '0px', 'sm': '4px', DEFAULT: '8px', 'md': '12px', 'lg': '16px', 'xl': '20px', '2xl': '24px', '3xl': '32px', 'full': '9999px', 'button': '8px' } } } }</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="icon" href="LOGO.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <style>
+        :where([class^="ri-"])::before {
+            content: "\f3c2";
+        }
+
+        .hero {
+            z-index: -99;
+        }
+
+        .notif {
+            z-index: 1000;
+        }
+
+    @media screen and (max-width: 500px) {
+    #notif-popup {
+        right: -2rem !important;
+        width: 250px;
+    }
+
+    .items-center i{
+        font-size: 22px;
+    }
+}
+
+  @media screen and (max-width: 500px) {
+    #notif-popup {
+        right: -3.5rem !important;
+        width: 250px;
+    }
+}
+  @media screen and (max-width: 767px) {
+    .sociaux {
+       display: none !important;
+    }
+}
+
+.LOGO{
+    width: 170px;
+}
+
+    </style>
+</head>
+
+<body class="bg-gray-50">
+    <header class="sticky top-0 bg-white shadow-sm border-b border-gray-100">
+        <div class="w-full px-6 py-2">
+            <div class="flex items-center justify-between">
+                <!-- Logo + Navigation -->
+                <div class="flex items-center space-x-8">
+                    <img src="LOGO.png" alt="" class="LOGO">
+
+                    <!-- Navigation desktop -->
+                    <nav id="menu" class="hidden md:flex space-x-8">
+                        <a href="#" class="text-gray-700 hover:text-primary transition-colors text-primary" >Accueil</a>
+                        <a href="./services.html" class="text-gray-700 hover:text-primary transition-colors">Services</a>
+                        <a href="./rendez-vous.html"
+                            class="text-gray-700 hover:text-primary transition-colors">Rendez-vous</a>
+                        <a href="./urgence.html" class="text-gray-700 hover:text-primary transition-colors">Urgences</a>
+                        <a href="./contact.html" class="text-gray-700 hover:text-primary transition-colors">Contact</a> 
+                        
+                    </nav>
+                </div>
+
+                <!-- Actions -->
+                <div class="flex items-center space-x-4">
+                   <!-- Réseaux sociaux -->
+                    <div class="flex items-center space-x-3 sociaux">
+                        <a href="https://wa.me/1234567890" target="_blank"
+                            class="w-8 h-8 flex items-center justify-center rounded-full bg-green-100 text-green-500 hover:bg-green-500 hover:text-white shadow-sm hover:shadow-lg transform hover:-translate-y-1 transition-all duration-200 text-2xl">
+                            <i class="ri-whatsapp-line"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/tonprofil" target="_blank"
+                            class="w-8 h-8 flex items-center justify-center rounded-full bg-blue-100 text-blue-600 hover:bg-blue-600 hover:text-white shadow-sm hover:shadow-lg transform hover:-translate-y-1 transition-all duration-200 text-2xl">
+                            <i class="ri-linkedin-line"></i>
+                        </a>
+                        <a href="https://www.instagram.com/tonprofil" target="_blank"
+                            class="w-8 h-8 flex items-center justify-center rounded-full bg-pink-100 text-pink-500 hover:bg-pink-500 hover:text-white shadow-sm hover:shadow-lg transform hover:-translate-y-1 transition-all duration-200 text-2xl">
+                            <i class="ri-instagram-line"></i>
+                        </a>
+                    </div>
+
+                    <!-- Notifications -->
+                    <div class="relative">
+                        <button id="notif-btn"
+                            class="text-gray-700 hover:text-primary text-2xl focus:outline-none relative">
+                            <i class="ri-notification-3-line"></i>
+                            <!-- Badge rouge -->
+                            <span id="notif-badge"
+                                class="absolute top-0 right-0 inline-block w-3 h-3 bg-red-500 rounded-full ring-2 ring-white"></span>
+                        </button>
+
+                        <!-- Popup notifications -->
+                        <div id="notif-popup"
+                            class="hidden absolute right-0 mt-2 w-80 bg-white shadow-lg rounded-lg p-4 border border-gray-200 z-50">
+                            <h3 class="font-semibold text-gray-800 mb-2">Notifications récentes</h3>
+                            <ul class="space-y-2 text-sm text-gray-600">
+                                <li class="p-2 rounded hover:bg-gray-50">⚠️ Dr. Amadou Dia sera absent demain.</li>
+                                <li class="p-2 rounded hover:bg-gray-50">ℹ️ Nouveau service de téléconsultation
+                                    disponible.</li>
+                                <li class="p-2 rounded hover:bg-gray-50">✅ Paiement par carte bancaire désormais
+                                    accepté.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Bouton menu hamburger (mobile) -->
+                    <button id="menu-btn" class="md:hidden text-3xl text-gray-700 focus:outline-none">
+                        ☰
+                    </button>
+                </div>
+            </div>
+
+            <!-- Menu mobile -->
+            <div id="mobile-menu" class="hidden flex-col space-y-4 mt-4 md:hidden">
+                <a href="#" class="text-gray-700 hover:text-primary transition-colors">Accueil</a>
+                <hr><br>
+                <a href="#services" class="text-gray-700 hover:text-primary transition-colors">Services</a>
+                <hr><br>
+                <a href="#rendez-vous" class="text-gray-700 hover:text-primary transition-colors">Rendez-vous</a>
+                <hr><br>
+                <a href="#urgences" class="text-gray-700 hover:text-primary transition-colors">Urgences</a>
+                <hr><br>
+                <a href="#contact" class="text-gray-700 hover:text-primary transition-colors">Contact</a><hr>
+
+                  <div class="flex items-center space-x-3 ">
+                        <a href="https://wa.me/1234567890" target="_blank"
+                            class="w-8 h-8 flex items-center justify-center rounded-full bg-green-100 text-green-500 hover:bg-green-500 hover:text-white shadow-sm hover:shadow-lg transform hover:-translate-y-1 transition-all duration-200 text-2xl">
+                            <i class="ri-whatsapp-line"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/tonprofil" target="_blank"
+                            class="w-8 h-8 flex items-center justify-center rounded-full bg-blue-100 text-blue-600 hover:bg-blue-600 hover:text-white shadow-sm hover:shadow-lg transform hover:-translate-y-1 transition-all duration-200 text-2xl">
+                            <i class="ri-linkedin-line"></i>
+                        </a>
+                        <a href="https://www.instagram.com/tonprofil" target="_blank"
+                            class="w-8 h-8 flex items-center justify-center rounded-full bg-pink-100 text-pink-500 hover:bg-pink-500 hover:text-white shadow-sm hover:shadow-lg transform hover:-translate-y-1 transition-all duration-200 text-2xl">
+                            <i class="ri-instagram-line"></i>
+                        </a>
+                        <hr>
+                    </div>
+            </div>
+        </div>
+    </header>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Menu mobile
+            const menuBtn = document.getElementById("menu-btn");
+            const mobileMenu = document.getElementById("mobile-menu");
+            menuBtn.addEventListener("click", () => {
+                mobileMenu.classList.toggle("hidden");
+            });
+
+            // Notifications popup
+            const notifBtn = document.getElementById("notif-btn");
+            const notifPopup = document.getElementById("notif-popup");
+
+            notifBtn.addEventListener("click", (e) => {
+                e.stopPropagation(); // empêche la fermeture immédiate
+                notifPopup.classList.toggle("hidden");
+            });
+
+            // Fermer popup si clic en dehors
+            document.addEventListener("click", (e) => {
+                if (!notifBtn.contains(e.target) && !notifPopup.contains(e.target)) {
+                    notifPopup.classList.add("hidden");
+                }
+            });
+        });
+    </script>
+
+
+    <main>
+        <section class="relative min-h-[60vh] sm:min-h-[80vh] lg:min-h-screen flex items-center overflow-hidden hero"
+            style="background-image: url('./homme-travaillant-comme-pediatre.jpg'); background-size: cover; background-position: center; background-attachment: fixed;">
+
+            <!-- Gradient overlay avec animation -->
+            <div class="absolute inset-0 bg-gradient-to-r from-white/95 via-white/85 to-white/40 lg:to-transparent">
+            </div>
+
+            <!-- Floating elements pour l'animation -->
+            <div class="absolute top-20 right-10 w-20 h-20 bg-primary/10 rounded-full blur-xl animate-bounce"
+                style="animation-delay: 0.5s; animation-duration: 3s;"></div>
+            <div class="absolute bottom-32 right-32 w-16 h-16 bg-secondary/15 rounded-full blur-lg animate-pulse"
+                style="animation-delay: 1s; animation-duration: 4s;"></div>
+            <div class="absolute top-1/2 right-20 w-12 h-12 bg-blue-300/20 rounded-full blur-md animate-bounce"
+                style="animation-delay: 1.5s; animation-duration: 2.5s;"></div>
+
+            <div class="relative w-full max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-12 lg:py-16 xl:py-20">
+                <div class="max-w-xl lg:max-w-2xl xl:max-w-3xl">
+                    <!-- Badge de confiance -->
+                    <div
+                        class="inline-flex items-center gap-2 bg-white/90 backdrop-blur-sm rounded-full px-4 py-2 mb-4 sm:mb-6 border border-primary/20">
+                        <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                        <span class="text-xs sm:text-sm font-medium text-gray-700">Service disponible 24h/24</span>
+                    </div>
+
+                    <!-- Titre principal avec animation -->
+                    <h1
+                        class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight tracking-tight">
+                        <span class="block">Votre santé,</span>
+                        <span class="block text-primary relative">
+                            notre priorité
+                            <!-- Underline animé -->
+                            <div class="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-secondary transform scale-x-0 origin-left animate-pulse"
+                                style="animation-delay: 2s; animation-duration: 1s; animation-fill-mode: forwards;">
+                            </div>
+                        </span>
+                    </h1>
+
+                    <!-- Description -->
+                    <p
+                        class="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 mb-6 sm:mb-8 leading-relaxed max-w-2xl">
+                        Prenez rendez-vous en ligne, accédez à vos informations médicales et gérez vos soins de santé en
+                        toute simplicité avec Clinic Sama Santé.
+                    </p>
+
+                    <!-- Stats rapides -->
+                    <div class="flex flex-wrap gap-4 sm:gap-6 mb-6 sm:mb-8">
+                        <div class="flex items-center gap-2 text-sm text-gray-600">
+                            <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
+                                <i class="ri-user-heart-line text-blue-600 text-sm"></i>
+                            </div>
+                            <span class="font-medium">+50 000 patients</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-sm text-gray-600">
+                            <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
+                                <i class="ri-award-line text-green-600 text-sm"></i>
+                            </div>
+                            <span class="font-medium">Certifié HAS</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-sm text-gray-600">
+                            <div class="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center">
+                                <i class="ri-time-line text-purple-600 text-sm"></i>
+                            </div>
+                            <span class="font-medium">Depuis 2008</span>
+                        </div>
+                    </div>
+
+                    <!-- Boutons CTA améliorés -->
+                    <div class="flex flex-col sm:flex-row gap-3 sm:gap-4">
+                        <button
+                            class="group bg-primary text-white px-6 sm:px-8 py-3 sm:py-4 rounded-button hover:bg-primary/90 hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-300 font-semibold text-sm sm:text-base flex items-center justify-center gap-2">
+                            <i
+                                class="ri-calendar-check-line group-hover:scale-110 transition-transform duration-300"></i>
+                            Prendre rendez-vous
+                        </button>
+
+                        <button
+                            class="group border-2 border-primary text-primary bg-white/80 backdrop-blur-sm px-6 sm:px-8 py-3 sm:py-4 rounded-button hover:bg-primary hover:text-white hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-300 font-semibold text-sm sm:text-base flex items-center justify-center gap-2">
+                            <i
+                                class="ri-phone-line text-red-500 group-hover:text-white group-hover:scale-110 transition-all duration-300"></i>
+                            <span class="hidden sm:inline">Services d'</span>urgence
+                        </button>
+                    </div>
+
+                    <!-- Indicateur de scroll -->
+                    <div class="hidden lg:flex items-center gap-2 mt-12 text-gray-500">
+                        <span class="text-sm">Découvrir nos services</span>
+                        <div class="animate-bounce">
+                            <i class="ri-arrow-down-line"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Particules flottantes pour mobile -->
+            <div class="sm:hidden absolute top-16 right-4 w-8 h-8 bg-primary/20 rounded-full blur-sm animate-pulse">
+            </div>
+            <div class="sm:hidden absolute bottom-24 right-8 w-6 h-6 bg-secondary/25 rounded-full blur animate-bounce"
+                style="animation-delay: 1s;"></div>
+        </section>
+        <section id="services" class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold text-gray-900 mb-4">Nos Services Médicaux</h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                        Découvrez l'ensemble de nos départements médicaux et leurs disponibilités en temps réel
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div
+                        class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-shadow">
+                        <div class="h-48 bg-cover bg-center"
+                            style="background-image: url('https://readdy.ai/api/search-image?query=Cardiology%20department%20with%20modern%20ECG%20machines%20and%20heart%20monitoring%20equipment%2C%20clean%20medical%20environment%20with%20blue%20and%20white%20color%20scheme%2C%20professional%20healthcare%20setting&width=400&height=300&seq=card001&orientation=landscape');">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-3">
+                                <h3 class="text-xl font-semibold text-gray-900">Cardiologie</h3>
+                                <span
+                                    class="inline-flex items-center px-3 py-1 rounded-full text-sm bg-green-100 text-green-800">
+                                    <div class="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
+                                    Disponible
+                                </span>
+                            </div>
+                            <p class="text-gray-600 mb-4">Consultations et examens cardiovasculaires avec équipements de
+                                pointe</p>
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm text-gray-500">Dr.Mariama Diallo • Dr. Jean Mendes</span>
+                                <button
+                                    class="text-primary hover:text-primary/80 font-medium whitespace-nowrap !rounded-button">
+                                    Voir les créneaux
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-shadow">
+                        <div class="h-48 bg-cover bg-center"
+                            style="background-image: url('https://readdy.ai/api/search-image?query=Pediatric%20department%20with%20colorful%20child-friendly%20medical%20equipment%20and%20toys%2C%20bright%20cheerful%20environment%20with%20soft%20colors%2C%20modern%20pediatric%20care%20setting&width=400&height=300&seq=ped001&orientation=landscape');">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-3">
+                                <h3 class="text-xl font-semibold text-gray-900">Pédiatrie</h3>
+                                <span
+                                    class="inline-flex items-center px-3 py-1 rounded-full text-sm bg-green-100 text-green-800">
+                                    <div class="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
+                                    Disponible
+                                </span>
+                            </div>
+                            <p class="text-gray-600 mb-4">Soins spécialisés pour enfants et adolescents dans un
+                                environnement adapté</p>
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm text-gray-500">Dr. Moussa BAH • Dr. TOUNKARA</span>
+                                <button
+                                    class="text-primary hover:text-primary/80 font-medium whitespace-nowrap !rounded-button">
+                                    Voir les créneaux
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-shadow">
+                        <div class="h-48 bg-cover bg-center"
+                            style="background-image: url('https://readdy.ai/api/search-image?query=Orthopedic%20surgery%20department%20with%20modern%20surgical%20equipment%20and%20X-ray%20machines%2C%20sterile%20medical%20environment%20with%20advanced%20technology&width=400&height=300&seq=ortho001&orientation=landscape');">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-3">
+                                <h3 class="text-xl font-semibold text-gray-900">Orthopédie</h3>
+                                <span
+                                    class="inline-flex items-center px-3 py-1 rounded-full text-sm bg-yellow-100 text-yellow-800">
+                                    <div class="w-2 h-2 bg-yellow-500 rounded-full mr-2"></div>
+                                    Limité
+                                </span>
+                            </div>
+                            <p class="text-gray-600 mb-4">Chirurgie et traumatologie des os, articulations et muscles
+                            </p>
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm text-gray-500">Dr. Maguette Diop• Dr. Pape thiaw</span>
+                                <button
+                                    class="text-primary hover:text-primary/80 font-medium whitespace-nowrap !rounded-button">
+                                    Voir les créneaux
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-shadow">
+                        <div class="h-48 bg-cover bg-center"
+                            style="background-image: url('https://readdy.ai/api/search-image?query=Neurology%20department%20with%20brain%20scanning%20equipment%20and%20neurological%20testing%20devices%2C%20high-tech%20medical%20environment%20with%20modern%20technology&width=400&height=300&seq=neuro001&orientation=landscape');">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-3">
+                                <h3 class="text-xl font-semibold text-gray-900">Neurologie</h3>
+                                <span
+                                    class="inline-flex items-center px-3 py-1 rounded-full text-sm bg-red-100 text-red-800">
+                                    <div class="w-2 h-2 bg-red-500 rounded-full mr-2"></div>
+                                    Dr. absent
+                                </span>
+                            </div>
+                            <p class="text-gray-600 mb-4">Diagnostic et traitement des troubles du système nerveux</p>
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm text-gray-500">Dr.Dieynaba Sene</span>
+                                <button class="text-gray-400 cursor-not-allowed whitespace-nowrap !rounded-button">
+                                    Non disponible
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-shadow">
+                        <div class="h-48 bg-cover bg-center"
+                            style="background-image: url('https://readdy.ai/api/search-image?query=Radiology%20department%20with%20MRI%20and%20CT%20scan%20machines%2C%20modern%20medical%20imaging%20equipment%20in%20clean%20sterile%20environment&width=400&height=300&seq=radio001&orientation=landscape');">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-3">
+                                <h3 class="text-xl font-semibold text-gray-900">Radiologie</h3>
+                                <span
+                                    class="inline-flex items-center px-3 py-1 rounded-full text-sm bg-green-100 text-green-800">
+                                    <div class="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
+                                    Disponible
+                                </span>
+                            </div>
+                            <p class="text-gray-600 mb-4">Imagerie médicale : IRM, scanner, échographie et radiographie
+                            </p>
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm text-gray-500">Dr. Aboubacar Leye • Dr. Djiby Ly</span>
+                                <button
+                                    class="text-primary hover:text-primary/80 font-medium whitespace-nowrap !rounded-button">
+                                    Voir les créneaux
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-shadow">
+                        <div class="h-48 bg-cover bg-center"
+                            style="background-image: url('https://readdy.ai/api/search-image?query=Emergency%20department%20with%20medical%20staff%20in%20action%2C%20ambulances%20and%20emergency%20equipment%2C%20urgent%20care%20medical%20environment%20with%20red%20and%20white%20colors&width=400&height=300&seq=urgence001&orientation=landscape');">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-3">
+                                <h3 class="text-xl font-semibold text-gray-900">Urgences</h3>
+                                <span
+                                    class="inline-flex items-center px-3 py-1 rounded-full text-sm bg-green-100 text-green-800">
+                                    <div class="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
+                                    24h/24
+                                </span>
+                            </div>
+                            <p class="text-gray-600 mb-4">Service d'urgences ouvert 24h/24 avec équipe médicale dédiée
+                            </p>
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm text-gray-500">Équipe d'urgentistes</span>
+                                <button
+                                    class="text-primary hover:text-primary/80 font-medium whitespace-nowrap !rounded-button">
+                                    Accès direct
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="rendez-vous" class="py-20 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold text-gray-900 mb-4">Prendre Rendez-vous</h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                        Simplifiez vos démarches médicales en prenant rendez-vous en ligne
+                    </p>
+                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <div class="bg-white rounded-2xl shadow-lg p-8 text-center">
+                        <div class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <div class="w-8 h-8 flex items-center justify-center">
+                                <i class="ri-calendar-line text-white text-xl"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-4">Rendez-vous en ligne</h3>
+                        <p class="text-gray-600 mb-6">Prenez rendez-vous 24h/24 et 7j/7 selon vos disponibilités</p>
+                        <button
+                            class="bg-primary text-white px-6 py-3 rounded-button hover:bg-primary/90 transition-colors font-semibold whitespace-nowrap !rounded-button">
+                            Réserver maintenant
+                        </button>
+                    </div>
+                    <div class="bg-white rounded-2xl shadow-lg p-8 text-center">
+                        <div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <div class="w-8 h-8 flex items-center justify-center">
+                                <i class="ri-phone-line text-white text-xl"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-4">Par téléphone</h3>
+                        <p class="text-gray-600 mb-6">Notre équipe est à votre écoute du lundi au vendredi de 8h à 20h
+                        </p>
+                        <p class="text-2xl font-semibold text-primary">33 878 87 87</p>
+                    </div>
+                    <div class="bg-white rounded-2xl shadow-lg p-8 text-center">
+                        <div class="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <div class="w-8 h-8 flex items-center justify-center">
+                                <i class="ri-hospital-line text-white text-xl"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-4">Sur place</h3>
+                        <p class="text-gray-600 mb-6">Rendez-vous directement à l'accueil de l'hôpital</p>
+                        <p class="text-sm text-gray-500">Keur Massar, Cité Apix<br>632 Sangalkam</p>
+                    </div>
+                </div>
+                <div class="mt-16 bg-white rounded-2xl shadow-lg overflow-hidden">
+                    <div class="grid grid-cols-1 lg:grid-cols-3">
+                        <div class="p-8 bg-primary text-white">
+                            <h3 class="text-2xl font-semibold mb-4">Horaires d'ouverture</h3>
+                            <div class="space-y-3">
+                                <div class="flex justify-between">
+                                    <span>Lundi - Vendredi</span>
+                                    <span>8h - 20h</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span>Samedi</span>
+                                    <span>9h - 18h</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span>Dimanche</span>
+                                    <span>Fermé*</span>
+                                </div>
+                                <p class="text-sm mt-4">*Urgences ouvertes 24h/24</p>
+                            </div>
+                        </div>
+                        <div class="col-span-2 p-8">
+                            <h3 class="text-2xl font-semibold text-gray-900 mb-4">Informations importantes</h3>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div class="flex items-start">
+                                    <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
+                                        <div class="w-6 h-6 flex items-center justify-center">
+                                            <i class="ri-file-list-line text-blue-600"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium text-gray-900 mb-1">Documents nécessaires</h4>
+                                        <p class="text-sm text-gray-600">Carte vitale, pièce d'identité et ordonnance si
+                                            nécessaire</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <div
+                                        class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center mr-4">
+                                        <div class="w-6 h-6 flex items-center justify-center">
+                                            <i class="ri-time-line text-green-600"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium text-gray-900 mb-1">Délai d'attente moyen</h4>
+                                        <p class="text-sm text-gray-600">15-20 minutes pour les consultations
+                                            programmées</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <div
+                                        class="w-10 h-10 bg-yellow-100 rounded-lg flex items-center justify-center mr-4">
+                                        <div class="w-6 h-6 flex items-center justify-center">
+                                            <i class="ri-parking-line text-yellow-600"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium text-gray-900 mb-1">Parking</h4>
+                                        <p class="text-sm text-gray-600">Parking gratuit pour les patients sur
+                                            présentation du ticket</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <div
+                                        class="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center mr-4">
+                                        <div class="w-6 h-6 flex items-center justify-center">
+                                            <i class="ri-bus-line text-purple-600"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium text-gray-900 mb-1">Accès</h4>
+                                        <p class="text-sm text-gray-600">VDN 3, Bus 50, 220, 227 et 91, arrêt "Hôpital"
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold text-gray-900 mb-4">Espace Personnel Patient</h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                        Accédez à vos documents médicaux, gérez vos paiements et suivez votre dossier de santé
+                    </p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+                    <div
+                        class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-6 text-center hover:shadow-lg transition-shadow">
+                        <div class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <div class="w-8 h-8 flex items-center justify-center">
+                                <i class="ri-file-text-line text-white text-xl"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2">Dossier Médical</h3>
+                        <p class="text-gray-600 text-sm mb-4">Consultez et téléchargez vos documents</p>
+                        <button class="text-blue-600 hover:text-blue-700 font-medium whitespace-nowrap !rounded-button">
+                            Accéder
+                        </button>
+                    </div>
+                    <div
+                        class="bg-gradient-to-br from-green-50 to-green-100 rounded-2xl p-6 text-center hover:shadow-lg transition-shadow">
+                        <div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <div class="w-8 h-8 flex items-center justify-center">
+                                <i class="ri-bank-card-line text-white text-xl"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2">Paiements</h3>
+                        <p class="text-gray-600 text-sm mb-4">Réglez vos consultations en ligne</p>
+                        <button
+                            class="text-green-600 hover:text-green-700 font-medium whitespace-nowrap !rounded-button">
+                            Payer
+                        </button>
+                    </div>
+                    <div
+                        class="bg-gradient-to-br from-purple-50 to-purple-100 rounded-2xl p-6 text-center hover:shadow-lg transition-shadow">
+                        <div class="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <div class="w-8 h-8 flex items-center justify-center">
+                                <i class="ri-download-line text-white text-xl"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2">Tickets</h3>
+                        <p class="text-gray-600 text-sm mb-4">Téléchargez vos justificatifs</p>
+                        <button
+                            class="text-purple-600 hover:text-purple-700 font-medium whitespace-nowrap !rounded-button">
+                            Télécharger
+                        </button>
+                    </div>
+                    <div
+                        class="bg-gradient-to-br from-orange-50 to-orange-100 rounded-2xl p-6 text-center hover:shadow-lg transition-shadow">
+                        <div class="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <div class="w-8 h-8 flex items-center justify-center">
+                                <i class="ri-history-line text-white text-xl"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2">Historique</h3>
+                        <p class="text-gray-600 text-sm mb-4">Consultez vos antécédents</p>
+                        <button
+                            class="text-orange-600 hover:text-orange-700 font-medium whitespace-nowrap !rounded-button">
+                            Voir
+                        </button>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <div class="bg-white rounded-2xl shadow-lg border border-gray-100 p-8">
+                        <h3 class="text-2xl font-semibold text-gray-900 mb-6">Documents Médicaux</h3>
+                        <div class="space-y-4">
+                            <div
+                                class="flex items-center justify-between p-4 border border-gray-100 rounded-lg hover:bg-gray-50 transition-colors">
+                                <div class="flex items-center">
+                                    <div class="w-10 h-10 bg-red-100 rounded-lg flex items-center justify-center mr-4">
+                                        <div class="w-6 h-6 flex items-center justify-center">
+                                            <i class="ri-file-pdf-line text-red-600"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <p class="font-medium text-gray-900">Résultats ECG</p>
+                                        <p class="text-sm text-gray-500">25 août 2024 • Dr. Dieynaba Sene</p>
+                                    </div>
+                                </div>
+                                <button class="text-primary hover:text-primary/80 whitespace-nowrap !rounded-button">
+                                    <div class="w-6 h-6 flex items-center justify-center">
+                                        <i class="ri-download-line"></i>
+                                    </div>
+                                </button>
+                            </div>
+                            <div
+                                class="flex items-center justify-between p-4 border border-gray-100 rounded-lg hover:bg-gray-50 transition-colors">
+                                <div class="flex items-center">
+                                    <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
+                                        <div class="w-6 h-6 flex items-center justify-center">
+                                            <i class="ri-file-text-line text-blue-600"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <p class="font-medium text-gray-900">Ordonnance</p>
+                                        <p class="text-sm text-gray-500">20 août 2024 • Dr. Aboubacar Leye</p>
+                                    </div>
+                                </div>
+                                <button class="text-primary hover:text-primary/80 whitespace-nowrap !rounded-button">
+                                    <div class="w-6 h-6 flex items-center justify-center">
+                                        <i class="ri-download-line"></i>
+                                    </div>
+                                </button>
+                            </div>
+                            <div
+                                class="flex items-center justify-between p-4 border border-gray-100 rounded-lg hover:bg-gray-50 transition-colors">
+                                <div class="flex items-center">
+                                    <div
+                                        class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center mr-4">
+                                        <div class="w-6 h-6 flex items-center justify-center">
+                                            <i class="ri-image-line text-green-600"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <p class="font-medium text-gray-900">IRM Cardiaque</p>
+                                        <p class="text-sm text-gray-500">15 août 2024 • Dr. Aminata Sow</p>
+                                    </div>
+                                </div>
+                                <button class="text-primary hover:text-primary/80 whitespace-nowrap !rounded-button">
+                                    <div class="w-6 h-6 flex items-center justify-center">
+                                        <i class="ri-download-line"></i>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                        <button
+                            class="w-full mt-6 bg-gray-100 text-gray-700 py-3 rounded-button hover:bg-gray-200 transition-colors font-medium whitespace-nowrap !rounded-button">
+                            Voir tous les documents
+                        </button>
+                    </div>
+                    <div class="bg-white rounded-2xl shadow-lg border border-gray-100 p-8">
+                        <h3 class="text-2xl font-semibold text-gray-900 mb-6">Paiement Sécurisé</h3>
+                        <div class="mb-6">
+                            <div class="flex items-center justify-between p-4 bg-gray-50 rounded-lg mb-4">
+                               <img style="width: 100%; border-radius: 15px;" src="data:image/jpeg;base64,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" alt="">
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer id="contact" class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <h3 class="text-xl font-semibold mb-6">Hôpital Saint-Michel</h3>
+                    <p class="text-gray-300 mb-4">
+                        Excellence médicale et soins personnalisés depuis 1985
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#"
+                            class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-700 transition-colors">
+                            <div class="w-5 h-5 flex items-center justify-center">
+                                <i class="ri-facebook-fill text-blue-500"></i>
+                            </div>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-700 transition-colors">
+                            <div class="w-5 h-5 flex items-center justify-center">
+                                <i class="ri-twitter-fill text-blue-400"></i>
+                            </div>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-700 transition-colors">
+                            <div class="w-5 h-5 flex items-center justify-center">
+                                <i class="ri-linkedin-fill text-blue-600"></i>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Contact</h4>
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <div class="w-5 h-5 flex items-center justify-center mr-3">
+                                <i class="ri-map-pin-line text-gray-400"></i>
+                            </div>
+                            <span class="text-gray-300">123 Avenue de la Santé, 75014 Paris</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-5 h-5 flex items-center justify-center mr-3">
+                                <i class="ri-phone-line text-gray-400"></i>
+                            </div>
+                            <span class="text-gray-300">01 42 34 56 78</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-5 h-5 flex items-center justify-center mr-3">
+                                <i class="ri-mail-line text-gray-400"></i>
+                            </div>
+                            <span class="text-gray-300">contact@hopital-saint-michel.fr</span>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Services</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Consultations</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Urgences 24h/24</a>
+                        </li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Chirurgie</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Imagerie médicale</a>
+                        </li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Laboratoire</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Urgences</h4>
+                    <div class="space-y-4">
+                        <div class="p-4 bg-red-600 rounded-lg">
+                            <div class="flex items-center mb-2">
+                                <div class="w-5 h-5 flex items-center justify-center mr-2">
+                                    <i class="ri-phone-fill text-white"></i>
+                                </div>
+                                <span class="font-semibold">SAMU : 15</span>
+                            </div>
+                            <p class="text-sm text-red-100">Urgences vitales</p>
+                        </div>
+                        <div class="p-4 bg-blue-600 rounded-lg">
+                            <div class="flex items-center mb-2">
+                                <div class="w-5 h-5 flex items-center justify-center mr-2">
+                                    <i class="ri-hospital-line text-white"></i>
+                                </div>
+                                <span class="font-semibold">Urgences : 01 42 34 56 99</span>
+                            </div>
+                            <p class="text-sm text-blue-100">Service d'urgences</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8">
+                <div class="flex flex-col md:flex-row items-center justify-between">
+                    <p class="text-gray-400 text-sm">
+                        © 2024 Hôpital Saint-Michel. Tous droits réservés.
+                    </p>
+                    <div class="flex space-x-6 mt-4 md:mt-0">
+                        <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Mentions
+                            légales</a>
+                        <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Politique de
+                            confidentialité</a>
+                        <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">CGU</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script id="filter-functionality">
+        document.addEventListener('DOMContentLoaded', function () {
+            const filterButtons = document.querySelectorAll('[data-filter]');
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    filterButtons.forEach(btn => {
+                        btn.classList.remove('bg-primary', 'text-white');
+                        btn.classList.add('text-gray-600', 'hover:bg-white');
+                    });
+                    this.classList.add('bg-primary', 'text-white');
+                    this.classList.remove('text-gray-600', 'hover:bg-white');
+                });
+            });
+        });
+    </script>
+    <!-- Conteneur des notifications -->
+    <div id="notification-container" class="fixed top-4 right-4 space-y-4 z-50"></div>
+
+    <script id="notification-system">
+        document.addEventListener('DOMContentLoaded', function () {
+            const container = document.getElementById('notification-container');
+
+            function showNotification(type, title, message) {
+                const notification = document.createElement('div');
+                notification.className = `p-4 rounded-lg shadow-lg max-w-sm transform translate-x-full transition-transform duration-300`;
+
+                if (type === 'warning') {
+                    notification.classList.add('bg-yellow-100', 'border-l-4', 'border-yellow-400');
+                } else if (type === 'info') {
+                    notification.classList.add('bg-blue-100', 'border-l-4', 'border-blue-400');
+                } else if (type === 'success') {
+                    notification.classList.add('bg-green-100', 'border-l-4', 'border-green-400');
+                }
+
+                notification.innerHTML = `
+<div class="flex items-start notif">
+    <div class="w-6 h-6 flex items-center justify-center mr-3">
+        <i class="ri-${type === 'warning' ? 'alert' : type === 'success' ? 'check' : 'information'}-line text-${type === 'warning' ? 'yellow' : type === 'success' ? 'green' : 'blue'}-500"></i>
+    </div>
+    <div>
+        <p class="font-medium text-${type === 'warning' ? 'yellow' : type === 'success' ? 'green' : 'blue'}-800">${title}</p>
+        <p class="text-sm text-${type === 'warning' ? 'yellow' : type === 'success' ? 'green' : 'blue'}-600">${message}</p>
+    </div>
+    <button class="ml-4 text-gray-400 hover:text-gray-600" onclick="this.parentElement.parentElement.remove()">
+        <i class="ri-close-line"></i>
+    </button>
+</div>
+`;
+
+                container.appendChild(notification);
+
+                // Animation entrée
+                setTimeout(() => {
+                    notification.classList.remove('translate-x-full');
+                }, 100);
+
+                // Disparition après 5s
+                setTimeout(() => {
+                    notification.classList.add('translate-x-full');
+                    setTimeout(() => notification.remove(), 300);
+                }, 5000);
+            }
+
+            // Notifications
+            setTimeout(() => {
+                showNotification('warning', 'Médecin absent', 'Dr. Michel Bernard sera absent demain. Vos rendez-vous ont été reportés.');
+            }, 2000);
+
+            setTimeout(() => {
+                showNotification('info', 'Nouveau service', 'Nous lançons un nouveau service de téléconsultation dès aujourd’hui.');
+            }, 5000);
+
+            setTimeout(() => {
+                showNotification('success', 'Nouveau mode de paiement', 'Vous pouvez désormais payer par carte bancaire à la Clinic Sama Santé.');
+            }, 8000);
+        });
+    </script>
+
+    <script id="appointment-booking">
+        document.addEventListener('DOMContentLoaded', function () {
+            const timeSlots = document.querySelectorAll('[data-time]');
+            let selectedSlot = null;
+            document.querySelectorAll('.grid .p-3').forEach(slot => {
+                slot.addEventListener('click', function () {
+                    if (selectedSlot) {
+                        selectedSlot.classList.remove('border-primary', 'bg-primary/10');
+                        selectedSlot.classList.add('border-gray-200');
+                    }
+                    selectedSlot = this;
+                    this.classList.remove('border-gray-200');
+                    this.classList.add('border-primary', 'bg-primary/10');
+                });
+            });
+        });
+    </script>
+
+    <!-- Bouton flottant du chatbot -->
+<div id="chatbot-button"
+    class="fixed bottom-6 right-6 bg-primary text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg cursor-pointer hover:scale-110 transition-transform z-50">
+    <i class="ri-message-3-line text-2xl"></i>
+</div>
+
+<!-- Popup chatbot -->
+<div id="chatbot-popup"
+    class="hidden fixed bottom-20 right-6 w-80 bg-white rounded-lg shadow-lg border border-gray-200 z-50 flex flex-col">
+    <!-- Header -->
+    <div class="bg-primary text-white p-3 rounded-t-lg flex justify-between items-center">
+        <span class="font-semibold">Assistant Sama Santé</span>
+        <button id="chatbot-close" class="text-white hover:text-gray-200">
+            <i class="ri-close-line text-xl"></i>
+        </button>
+    </div>
+
+    <!-- Messages -->
+    <div id="chatbot-messages" class="p-4 space-y-3 h-64 overflow-y-auto text-sm text-gray-700">
+        <div class="bg-gray-100 p-2 rounded-lg w-max max-w-[75%]">👋 Bonjour ! Comment puis-je vous aider ?</div>
+    </div>
+
+    <!-- Zone de saisie -->
+    <form id="chatbot-form" class="p-3 border-t flex items-center space-x-2">
+        <input type="text" id="chatbot-input" placeholder="Écrivez votre message..."
+            class="flex-1 border rounded-lg px-3 py-2 focus:ring-2 focus:ring-primary outline-none text-sm">
+        <button type="submit" class="bg-primary text-white px-3 py-2 rounded-lg hover:bg-primary/90">
+            <i class="ri-send-plane-2-line"></i>
+        </button>
+    </form>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const chatBtn = document.getElementById("chatbot-button");
+        const chatPopup = document.getElementById("chatbot-popup");
+        const chatClose = document.getElementById("chatbot-close");
+        const chatForm = document.getElementById("chatbot-form");
+        const chatInput = document.getElementById("chatbot-input");
+        const chatMessages = document.getElementById("chatbot-messages");
+
+        // Ouvrir / fermer le chatbot
+        chatBtn.addEventListener("click", () => {
+            chatPopup.classList.toggle("hidden");
+        });
+        chatClose.addEventListener("click", () => {
+            chatPopup.classList.add("hidden");
+        });
+
+        // Gestion des messages
+        chatForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+            const userMsg = chatInput.value.trim();
+            if (userMsg === "") return;
+
+            // Afficher message utilisateur
+            const userDiv = document.createElement("div");
+            userDiv.className = "bg-primary text-white p-2 rounded-lg w-max max-w-[75%] ml-auto";
+            userDiv.textContent = userMsg;
+            chatMessages.appendChild(userDiv);
+
+            chatInput.value = "";
+
+            // Réponse simple du bot (exemple)
+            setTimeout(() => {
+                const botDiv = document.createElement("div");
+                botDiv.className = "bg-gray-100 p-2 rounded-lg w-max max-w-[75%]";
+                botDiv.textContent = "Merci pour votre message. Un agent vous répondra bientôt.";
+                chatMessages.appendChild(botDiv);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }, 800);
+
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        });
+    });
+</script>
+
+
+    <script src="https://static.readdy.ai/static/share.js"></script>
+</body>
+
+</html>
